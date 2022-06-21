@@ -5,6 +5,10 @@
 package MDI;
 
 import com.formdev.flatlaf.FlatDarculaLaf;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 /**
@@ -17,6 +21,7 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     public Principal() {
+        setExtendedState(MAXIMIZED_BOTH);
         initComponents();
     }
 
@@ -29,7 +34,13 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuPrincipal = new javax.swing.JDesktopPane();
+        menuPrincipal = new javax.swing.JDesktopPane(){
+            @Override
+            protected void paintComponent(Graphics g)
+            {
+                g.drawImage(new ImageIcon(getClass().getResource("/Recursos/Imagenes/imagen1.jpg")).getImage(), 0, 0, getWidth(), getHeight(), this);
+            }
+        };
         menuBar = new javax.swing.JMenuBar();
         sistemaMenu = new javax.swing.JMenu();
         salirSistemaMenu = new javax.swing.JMenuItem();
@@ -148,5 +159,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem salirSistemaMenu;
     private javax.swing.JMenu sistemaMenu;
     // End of variables declaration//GEN-END:variables
+
+    private static class Imagelcon {
+
+        public Imagelcon(URL resource) {
+        }
+
+        private Image getimage() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }
 
 }
