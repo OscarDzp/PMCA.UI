@@ -46,9 +46,9 @@ public class Principal extends javax.swing.JFrame {
         salirSistemaMenu = new javax.swing.JMenuItem();
         activosMenu = new javax.swing.JMenu();
         registrarActivoMenu = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
+        actualizarActivoMenu = new javax.swing.JMenuItem();
+        consultarActivoMenu = new javax.swing.JMenuItem();
+        listadoActivoMenu = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
@@ -56,9 +56,11 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MCA-Modulo de Control de Activvos");
 
+        sistemaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/desktop-16.png"))); // NOI18N
         sistemaMenu.setMnemonic('f');
         sistemaMenu.setText("Sistema");
 
+        salirSistemaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/exit-16.png"))); // NOI18N
         salirSistemaMenu.setMnemonic('x');
         salirSistemaMenu.setText("Salir");
         salirSistemaMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -70,25 +72,34 @@ public class Principal extends javax.swing.JFrame {
 
         menuBar.add(sistemaMenu);
 
+        activosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/list-16.png"))); // NOI18N
         activosMenu.setMnemonic('e');
         activosMenu.setText("Activos");
 
         registrarActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-save-16.png"))); // NOI18N
         registrarActivoMenu.setMnemonic('t');
-        registrarActivoMenu.setText("Registrar");
+        registrarActivoMenu.setText("Registrar activos");
+        registrarActivoMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarActivoMenuActionPerformed(evt);
+            }
+        });
         activosMenu.add(registrarActivoMenu);
 
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
-        activosMenu.add(copyMenuItem);
+        actualizarActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/update-16.png"))); // NOI18N
+        actualizarActivoMenu.setMnemonic('y');
+        actualizarActivoMenu.setText("Actualizar activos");
+        activosMenu.add(actualizarActivoMenu);
 
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
-        activosMenu.add(pasteMenuItem);
+        consultarActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/consultant-16.png"))); // NOI18N
+        consultarActivoMenu.setMnemonic('p');
+        consultarActivoMenu.setText("Consultar de activos");
+        activosMenu.add(consultarActivoMenu);
 
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
-        activosMenu.add(deleteMenuItem);
+        listadoActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/list-view-16.png"))); // NOI18N
+        listadoActivoMenu.setMnemonic('d');
+        listadoActivoMenu.setText("Listado de activos");
+        activosMenu.add(listadoActivoMenu);
 
         menuBar.add(activosMenu);
 
@@ -126,6 +137,12 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_salirSistemaMenuActionPerformed
 
+    private void registrarActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActivoMenuActionPerformed
+     Activos.FrmRegistro myForm = new Activos.FrmRegistro();
+     this.menuPrincipal.add(myForm);
+     myForm.show();
+    }//GEN-LAST:event_registrarActivoMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -148,13 +165,13 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenu activosMenu;
+    private javax.swing.JMenuItem actualizarActivoMenu;
+    private javax.swing.JMenuItem consultarActivoMenu;
     private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenuItem listadoActivoMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JDesktopPane menuPrincipal;
-    private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem registrarActivoMenu;
     private javax.swing.JMenuItem salirSistemaMenu;
     private javax.swing.JMenu sistemaMenu;
