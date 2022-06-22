@@ -38,7 +38,7 @@ public class Principal extends javax.swing.JFrame {
             @Override
             protected void paintComponent(Graphics g)
             {
-                g.drawImage(new ImageIcon(getClass().getResource("/Recursos/Imagenes/imagen1.jpg")).getImage(), 0, 0, getWidth(), getHeight(), this);
+                g.drawImage(new ImageIcon(getClass().getResource("/Recursos/Imagenes/imagen2.jpg")).getImage(), 0, 0, getWidth(), getHeight(), this);
             }
         };
         menuBar = new javax.swing.JMenuBar();

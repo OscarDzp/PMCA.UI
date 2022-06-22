@@ -4,6 +4,8 @@
  */
 package Activos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author oscar
@@ -89,7 +91,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbTipoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbTipoRequerido.setText("*");
 
-        comboxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "celular", "Equipo de computo", "Muebles y enseres", "Tablets", "Vehículos ", " ", " " }));
+        comboxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el tipo", "Celular", "Equipo de computo", "Muebles y enseres", "Tablets", "Vehículos ", " ", " " }));
 
         txtCantidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
@@ -99,15 +101,25 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbEstadoRequerido.setText("*");
 
         chkActivo.setText("Activo");
+        chkActivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkActivoActionPerformed(evt);
+            }
+        });
 
         chkInactivo.setText("Inactivo");
+        chkInactivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkInactivoActionPerformed(evt);
+            }
+        });
 
         lbFragilidad.setText("Fragilidad:");
 
         lbFragilidadRequerido.setForeground(new java.awt.Color(204, 0, 0));
         lbFragilidadRequerido.setText("*");
 
-        comboxFragilidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muy Frágil", "Frágil", "Normal", "Resistente\t", "Muy Resistente" }));
+        comboxFragilidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la fragilidad", "Muy Frágil", "Frágil", "Normal", "Resistente\t", "Muy Resistente" }));
 
         lbDescripción.setText("Descripción:");
 
@@ -154,11 +166,11 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                        .addComponent(lbTipo)
+                        .addComponent(lbFragilidad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbTipoRequerido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(comboxTipo, 0, 204, Short.MAX_VALUE))
+                        .addComponent(lbFragilidadRequerido)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboxFragilidad, 0, 181, Short.MAX_VALUE))
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                         .addComponent(lbEstado)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -169,11 +181,11 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                         .addComponent(chkInactivo)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                        .addComponent(lbFragilidad)
+                        .addComponent(lbTipo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbFragilidadRequerido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboxFragilidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(lbTipoRequerido)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comboxTipo, 0, 204, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelRegistroActivoLayout.setVerticalGroup(
@@ -190,7 +202,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                     .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbTipo)
                     .addComponent(lbTipoRequerido)
-                    .addComponent(comboxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboxTipo))
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbNombre)
@@ -207,8 +219,8 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                     .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbFragilidad)
                     .addComponent(lbFragilidadRequerido)
-                    .addComponent(comboxFragilidad, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(comboxFragilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbDescripción, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbDescripcionRequerida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -219,10 +231,21 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         txtareaDescripción.setRows(5);
         jScrollPane1.setViewportView(txtareaDescripción);
 
+        btGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/save-16.png"))); // NOI18N
         btGuardar.setText("Guardar");
+        btGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGuardarActionPerformed(evt);
+            }
+        });
 
         btLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/clean-16.png"))); // NOI18N
         btLimpiar.setText("Limpiar");
+        btLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimpiarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -260,6 +283,68 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
     private void txtCódigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCódigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCódigoActionPerformed
+
+    private void chkActivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkActivoActionPerformed
+        if (this.chkInactivo.isSelected()) {
+            this.chkInactivo.setSelected(false);
+        }
+    }//GEN-LAST:event_chkActivoActionPerformed
+
+    private void chkInactivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkInactivoActionPerformed
+        if (this.chkActivo.isSelected()) {
+            this.chkActivo.setSelected(false);
+        }
+    }//GEN-LAST:event_chkInactivoActionPerformed
+
+    private void btLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimpiarActionPerformed
+        this.txtCantidad.setText("");
+        this.txtCantidad.setValue(null);
+        this.txtCódigo.setText("");
+        this.txtNombre.setText("");
+        this.txtareaDescripción.setText("");
+        this.comboxTipo.setSelectedIndex(0);
+        this.comboxFragilidad.setSelectedIndex(0);
+        this.chkActivo.setSelected(false);
+        this.chkInactivo.setSelected(false);
+
+    }//GEN-LAST:event_btLimpiarActionPerformed
+
+    private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
+        if (this.txtCódigo.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            this.txtCódigo.requestFocus();
+            return;
+        }
+        if (this.comboxTipo.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Seleccione un tipo de activo.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            this.comboxTipo.requestFocus();
+            return;
+        }
+        if (this.txtNombre.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "El nombre es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            this.txtNombre.requestFocus();
+            return;
+        }
+        if (!this.chkActivo.isSelected() && !this.chkInactivo.isSelected()) {
+            JOptionPane.showMessageDialog(this, "Marque un estado.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        if (this.txtCantidad.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "La cantidad es requerida.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            this.txtCantidad.requestFocus();
+            return;
+        }
+        if (this.comboxFragilidad.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Seleccione la fragilidad del activo.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            this.comboxFragilidad.requestFocus();
+            return;
+        }
+        if (this.txtareaDescripción.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "Introduzca la descripcion del activo.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            this.txtareaDescripción.requestFocus();
+            return;
+        }
+    }//GEN-LAST:event_btGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
