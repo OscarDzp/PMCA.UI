@@ -4,6 +4,9 @@
  */
 package Activos;
 
+import Clases.clsActivo;
+import Interfaces.intzGestor;
+import Seguridad.clsGestor;
 import javax.swing.JOptionPane;
 
 /**
@@ -196,13 +199,14 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separadorEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbCódigo)
-                    .addComponent(lbCódigoRequerido)
-                    .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbTipo)
-                    .addComponent(lbTipoRequerido)
-                    .addComponent(comboxTipo))
+                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboxTipo)
+                    .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbCódigo)
+                        .addComponent(lbCódigoRequerido)
+                        .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbTipo)
+                        .addComponent(lbTipoRequerido)))
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbNombre)
@@ -297,7 +301,11 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_chkInactivoActionPerformed
 
     private void btLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimpiarActionPerformed
-        this.txtCantidad.setText("");
+      this.LimpiarFormulario();
+
+    }//GEN-LAST:event_btLimpiarActionPerformed
+private void LimpiarFormulario(){
+  this.txtCantidad.setText("");
         this.txtCantidad.setValue(null);
         this.txtCódigo.setText("");
         this.txtNombre.setText("");
@@ -306,9 +314,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         this.comboxFragilidad.setSelectedIndex(0);
         this.chkActivo.setSelected(false);
         this.chkInactivo.setSelected(false);
-
-    }//GEN-LAST:event_btLimpiarActionPerformed
-
+}
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
         if (this.txtCódigo.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
@@ -343,6 +349,38 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Introduzca la descripcion del activo.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.txtareaDescripción.requestFocus();
             return;
+        }
+        // creacion de objectos.
+        intzGestor myGestor = new clsGestor();
+
+        //estado en que nace el activo.
+        boolean estado;
+        if (this.chkActivo.isSelected()) {
+            estado = true;
+        } else {
+            estado = false;
+        }
+
+        // objectos del activo.
+        clsActivo myActivo = new clsActivo(
+                0,
+                this.txtCódigo.getText().trim(),
+                this.comboxTipo.getSelectedItem().toString(),
+                this.txtNombre.getText().trim(),
+                this.txtareaDescripción.getText().trim(),
+                estado,
+                Integer.parseInt(this.txtCantidad.getValue().toString()),
+                this.comboxFragilidad.getSelectedItem().toString());
+
+        // operacion de registro.
+        boolean operacion = myGestor.GuardarActivo(myActivo);
+        // validar resultaddo.
+        if (operacion) {
+            JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+             this.LimpiarFormulario();
+             this.txtCódigo.requestFocus();
+        } else {
+            JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btGuardarActionPerformed
 

@@ -149,13 +149,15 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="separadorEncabezado" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbCódigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbCódigoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCódigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbTipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbTipoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="comboxTipo" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbCódigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbCódigoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCódigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbTipoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">

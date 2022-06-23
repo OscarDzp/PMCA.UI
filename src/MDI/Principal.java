@@ -99,6 +99,11 @@ public class Principal extends javax.swing.JFrame {
         listadoActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/list-view-16.png"))); // NOI18N
         listadoActivoMenu.setMnemonic('d');
         listadoActivoMenu.setText("Listado de activos");
+        listadoActivoMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listadoActivoMenuActionPerformed(evt);
+            }
+        });
         activosMenu.add(listadoActivoMenu);
 
         menuBar.add(activosMenu);
@@ -142,6 +147,12 @@ public class Principal extends javax.swing.JFrame {
      this.menuPrincipal.add(myForm);
      myForm.show();
     }//GEN-LAST:event_registrarActivoMenuActionPerformed
+
+    private void listadoActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActivoMenuActionPerformed
+        Activos.frmListar myForm = new Activos.frmListar();
+     this.menuPrincipal.add(myForm);
+     myForm.show();
+    }//GEN-LAST:event_listadoActivoMenuActionPerformed
 
     /**
      * @param args the command line arguments
