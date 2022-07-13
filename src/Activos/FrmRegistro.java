@@ -137,9 +137,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbinfo)
                 .addGap(193, 193, 193))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroActivoLayout.createSequentialGroup()
-                .addComponent(separadorEncabezado)
-                .addContainerGap())
             .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
@@ -189,6 +186,10 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                         .addComponent(lbTipoRequerido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(comboxTipo, 0, 204, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(panelRegistroActivoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(separadorEncabezado)
                 .addContainerGap())
         );
         panelRegistroActivoLayout.setVerticalGroup(

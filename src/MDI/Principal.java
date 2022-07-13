@@ -47,11 +47,11 @@ public class Principal extends javax.swing.JFrame {
         activosMenu = new javax.swing.JMenu();
         registrarActivoMenu = new javax.swing.JMenuItem();
         actualizarActivoMenu = new javax.swing.JMenuItem();
-        consultarActivoMenu = new javax.swing.JMenuItem();
         listadoActivoMenu = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
+        autosMenu = new javax.swing.JMenu();
+        registrarVehiculo = new javax.swing.JCheckBoxMenuItem();
+        actualizarVehiculo = new javax.swing.JCheckBoxMenuItem();
+        listarVehiculo = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MCA-Modulo de Control de Activvos");
@@ -89,12 +89,12 @@ public class Principal extends javax.swing.JFrame {
         actualizarActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/update-16.png"))); // NOI18N
         actualizarActivoMenu.setMnemonic('y');
         actualizarActivoMenu.setText("Actualizar activos");
+        actualizarActivoMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarActivoMenuActionPerformed(evt);
+            }
+        });
         activosMenu.add(actualizarActivoMenu);
-
-        consultarActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/consultant-16.png"))); // NOI18N
-        consultarActivoMenu.setMnemonic('p');
-        consultarActivoMenu.setText("Consultar de activos");
-        activosMenu.add(consultarActivoMenu);
 
         listadoActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/list-view-16.png"))); // NOI18N
         listadoActivoMenu.setMnemonic('d');
@@ -108,18 +108,40 @@ public class Principal extends javax.swing.JFrame {
 
         menuBar.add(activosMenu);
 
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Help");
+        autosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/-car-16.png"))); // NOI18N
+        autosMenu.setText("Autos");
 
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
+        registrarVehiculo.setSelected(true);
+        registrarVehiculo.setText("Registrar Vehiculo");
+        registrarVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-cars-16.png"))); // NOI18N
+        registrarVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarVehiculoActionPerformed(evt);
+            }
+        });
+        autosMenu.add(registrarVehiculo);
 
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
+        actualizarVehiculo.setSelected(true);
+        actualizarVehiculo.setText("Actualizar Vehiculos");
+        actualizarVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-car-roof-box-16.png"))); // NOI18N
+        actualizarVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarVehiculoActionPerformed(evt);
+            }
+        });
+        autosMenu.add(actualizarVehiculo);
 
-        menuBar.add(helpMenu);
+        listarVehiculo.setSelected(true);
+        listarVehiculo.setText("Listar Vehiculos");
+        listarVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-car-16.png"))); // NOI18N
+        listarVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarVehiculoActionPerformed(evt);
+            }
+        });
+        autosMenu.add(listarVehiculo);
+
+        menuBar.add(autosMenu);
 
         setJMenuBar(menuBar);
 
@@ -143,16 +165,64 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_salirSistemaMenuActionPerformed
 
     private void registrarActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActivoMenuActionPerformed
-     Activos.FrmRegistro myForm = new Activos.FrmRegistro();
-     this.menuPrincipal.add(myForm);
-     myForm.show();
+        Activos.FrmRegistro myForm = new Activos.FrmRegistro();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+        myForm.show();
     }//GEN-LAST:event_registrarActivoMenuActionPerformed
 
     private void listadoActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActivoMenuActionPerformed
         Activos.frmListar myForm = new Activos.frmListar();
-     this.menuPrincipal.add(myForm);
-     myForm.show();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+        myForm.show();
     }//GEN-LAST:event_listadoActivoMenuActionPerformed
+
+    private void actualizarActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActivoMenuActionPerformed
+        Activos.FrmActualizar myForm = new Activos.FrmActualizar();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+        myForm.show();
+    }//GEN-LAST:event_actualizarActivoMenuActionPerformed
+
+    private void registrarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarVehiculoActionPerformed
+     Autos.FrmRegistro myForm = new Autos.FrmRegistro();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+    myForm.show();  
+    }//GEN-LAST:event_registrarVehiculoActionPerformed
+
+    private void actualizarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarVehiculoActionPerformed
+    Autos.FrmActualizar myForm = new Autos.FrmActualizar();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+    myForm.show();  
+    }//GEN-LAST:event_actualizarVehiculoActionPerformed
+
+    private void listarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarVehiculoActionPerformed
+      Autos.FrmListar myForm = new Autos.FrmListar();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+    myForm.show();  
+    }//GEN-LAST:event_listarVehiculoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +237,7 @@ public class Principal extends javax.swing.JFrame {
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Principal().setVisible(true);
             }
@@ -174,16 +245,16 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenu activosMenu;
     private javax.swing.JMenuItem actualizarActivoMenu;
-    private javax.swing.JMenuItem consultarActivoMenu;
-    private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenu helpMenu;
+    private javax.swing.JCheckBoxMenuItem actualizarVehiculo;
+    private javax.swing.JMenu autosMenu;
     private javax.swing.JMenuItem listadoActivoMenu;
+    private javax.swing.JCheckBoxMenuItem listarVehiculo;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JDesktopPane menuPrincipal;
     private javax.swing.JMenuItem registrarActivoMenu;
+    private javax.swing.JCheckBoxMenuItem registrarVehiculo;
     private javax.swing.JMenuItem salirSistemaMenu;
     private javax.swing.JMenu sistemaMenu;
     // End of variables declaration//GEN-END:variables
