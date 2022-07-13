@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package Autos;
 
 import Clases.clsAutos;
@@ -660,7 +657,7 @@ private int idAuto;
                 this.txtAnotaciones.getText(),
                 txtEstado.getValue().toString(), 0);
 
-        boolean operacion = myGestor.ActualizarActivo(myAutos);
+        boolean operacion = myGestor.ActualizarAutos(myAutos);
 
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
@@ -678,7 +675,7 @@ private int idAuto;
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
 
         if (!codigo.isBlank() && !codigo.isEmpty()) {
-            clsAutos myAuto = this.myGestor.ConsultarAuto(codigo);
+            clsAutos myAuto = this.myGestor.ConsultarAutos(codigo);
 
             if (myAuto != null && myAuto.getIdAutos() > 0) {
                 this.btActualizar.setEnabled(true);
