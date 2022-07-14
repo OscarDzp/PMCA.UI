@@ -1,4 +1,3 @@
-
 package Autos;
 
 import Clases.clsAutos;
@@ -13,8 +12,9 @@ import javax.swing.JOptionPane;
 public class FrmActualizar extends javax.swing.JInternalFrame {
 
     private Object btnActualizar;
-private clsGestor myGestor;
-private int idAuto;
+    private clsGestor myGestor;
+    private int idAuto;
+
     /**
      * Creates new form FrmActualizar
      */
@@ -514,7 +514,6 @@ private int idAuto;
         this.txtBuscar.setText("");
         this.txtBuscar.requestFocus();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
-
     private void LimpiarFormulario() {
         this.txtCódigo.setText("");
         this.txtMarca.setText("");
@@ -532,7 +531,6 @@ private int idAuto;
         this.comboxTipo.setSelectedIndex(0);
         this.txtAnotaciones.setText("");
     }
-
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
 
     }//GEN-LAST:event_txtBuscarActionPerformed
@@ -679,7 +677,7 @@ private int idAuto;
 
             if (myAuto != null && myAuto.getIdAutos() > 0) {
                 this.btActualizar.setEnabled(true);
-                
+
                 this.idAuto = myAuto.getIdAutos();
                 this.txtMarca.setText(myAuto.getMarca());
                 this.txtModelo.setText(myAuto.getModelo());
@@ -703,7 +701,7 @@ private int idAuto;
                 this.txtKilometraje.setText(myAuto.getKilometraje());
                 this.txtEstado.setText(myAuto.getEstado());
                 this.comboxTipo.setSelectedItem(myAuto.getcomboxTipo);
-                this.txtAnotaciones.setText(myAuto.getAnotaciones);
+                this.txt.setText(myAuto.gettxtAnotaciones);
             } else {
                 JOptionPane.showMessageDialog(this, "NO se ha encontrado el Vehiculo.", "Aviso", JOptionPane.WARNING_MESSAGE);
                 this.btActualizar.setEnabled(false);

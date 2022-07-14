@@ -1,21 +1,23 @@
 
-package Activos;
 import Clases.clsActivo;
 import Seguridad.clsGestor;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 /**
  *
  * @author oscar
  */
 public class frmListar extends javax.swing.JInternalFrame {
 
-    private final clsGestor myGestor;
+    private clsGestor myGestor;
 
     /**
      * Creates new form frmListar
      */
     public frmListar() {
-        this.myGestor = new clsGestor();
+     this.myGestor = new clsGestor();
         initComponents();
         this.CargarTabla();
     }
@@ -36,6 +38,11 @@ public class frmListar extends javax.swing.JInternalFrame {
         javax.swing.JPanel panelListar = new javax.swing.JPanel();
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JTable tActivos = new javax.swing.JTable();
+        javax.swing.JLabel lbInformacionFiltrar = new javax.swing.JLabel();
+        javax.swing.JTextField txtBuscar = new javax.swing.JTextField();
+        javax.swing.JLabel lbBuscar = new javax.swing.JLabel();
+        javax.swing.JButton btnBuscar = new javax.swing.JButton();
+        javax.swing.JButton btnLimpiarBuscador = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -67,16 +74,79 @@ public class frmListar extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tActivos);
 
+        lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbInformacionFiltrar.setText("Ingrese el código del activo.");
+
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtBuscarKeyPressed(evt);
+            }
+        });
+
+        lbBuscar.setText("Buscar:");
+
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-search-16.png"))); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        btnBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnBuscarKeyPressed(evt);
+            }
+        });
+
+        btnLimpiarBuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/clean-16.png"))); // NOI18N
+        btnLimpiarBuscador.setText("Limpiar");
+        btnLimpiarBuscador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarBuscadorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelListarLayout = new javax.swing.GroupLayout(panelListar);
         panelListar.setLayout(panelListarLayout);
         panelListarLayout.setHorizontalGroup(
             panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 933, Short.MAX_VALUE)
+            .addGroup(panelListarLayout.createSequentialGroup()
+                .addGap(262, 262, 262)
+                .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelListarLayout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(btnBuscar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimpiarBuscador))
+                    .addGroup(panelListarLayout.createSequentialGroup()
+                        .addComponent(lbBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelListarLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(lbInformacionFiltrar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelListarLayout.setVerticalGroup(
             panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelListarLayout.createSequentialGroup()
-                .addGap(137, 137, 137)
+                .addContainerGap()
+                .addComponent(lbInformacionFiltrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLimpiarBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -96,6 +166,50 @@ public class frmListar extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+
+    }//GEN-LAST:event_txtBuscarActionPerformed
+
+    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.Buscar();
+        }
+    }//GEN-LAST:event_txtBuscarKeyPressed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        this.btnBuscar.requestFocus();
+        this.Buscar();
+    }//GEN-LAST:event_btnBuscarActionPerformed
+  private void Buscar() {
+       
+        String valor = this.btnBuscar.getText().trim().toLowerCase();
+        if (!valor.isEmpty() && !valor.isBlank()) {  
+            ArrayList<clsActivo> activos = this.myGestor.ListarActivos();
+            if (activos != null && !activos.isEmpty()) {
+                List<clsActivo> finales = activos.stream()
+                        .filter(activo -> activo.getCodigo().trim().toLowerCase().contains(valor)
+                        || activo.getNombre().trim().toLowerCase().contains(valor)
+                        || activo.getTipo().trim().toLowerCase().contains(valor)
+                        || activo.getFragilidad().trim().toLowerCase().contains(valor)                             
+                        || activo.getDescripcion().trim().toLowerCase().contains(valor)
+                        || (activo.getIdActivo() + "").trim().toLowerCase().contains(valor)
+                        ).collect(Collectors.toList());
+                this.CargarTabla((ArrayList<clsActivo>) finales);
+            }
+        } else {
+            this.CargarTabla();
+        }
+    }
+    private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
+
+    }//GEN-LAST:event_btnBuscarKeyPressed
+
+    private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
+        this.btnLimpiarBuscador.setText("");
+        this.btnLimpiarBuscador.requestFocus();
+        this.CargarTabla();
+    }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
 
     
     // Variables declaration - do not modify                     
