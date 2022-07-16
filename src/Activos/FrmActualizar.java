@@ -481,7 +481,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
 
         if (!codigo.isBlank() && !codigo.isEmpty()) {
-            clsActivo myEmpleado = this.myGestor.ConsultarActivo(codigo);
+            clsActivo myEmpleado = this.myGestor.ConsultarActivo(Integer.valueOf(codigo));
 
             if (myEmpleado != null && myEmpleado.getIdActivo() > 0) {
                 this.btActualizar.setEnabled(true);

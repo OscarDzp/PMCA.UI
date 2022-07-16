@@ -1,3 +1,4 @@
+package Activos;
 
 import Clases.clsActivo;
 import Seguridad.clsGestor;
@@ -5,6 +6,8 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author oscar
@@ -17,15 +20,78 @@ public class frmListar extends javax.swing.JInternalFrame {
      * Creates new form frmListar
      */
     public frmListar() {
-     this.myGestor = new clsGestor();
+        this.myGestor = new clsGestor();
         initComponents();
         this.CargarTabla();
     }
 
-    private void CargarTabla(){
+    private void CargarTabla() {
         ArrayList<clsActivo> activos = this.myGestor.ListarActivos();
+        String[] columnas = new String[]{
+            "Activo",
+            "Nombre",
+            "Código",
+            "Tipo",
+            "Fragilidad",
+            "Descripción",
+            "Estado",
+            "Cantidad"
+        };
+
+        DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
+        for (clsActivo activo : activos) {
+            obModelo.addRow(new object[]{
+                activo.getIdActivo(),
+                activo.getCodigo(),
+                activo.getNombre(),
+                activo.getTipo(),
+                activo.getFragilidad(),
+                activo.getDescripcion(),
+                activo.getCantidad(),
+                this.ObtenerEstado(activo.isEstado())
+            });
+            this.tActivos.setModel(obModelo);
+        }
     }
-    
+
+    private void CargarTabla(ArrayList<clsActivo> activos) {
+
+        String[] columnas = new String[]{
+            "Activo",
+            "Nombre",
+            "Código",
+            "Tipo",
+            "Fragilidad",
+            "Descripción",
+            "Estado",
+            "Cantidad"
+       
+        
+        DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
+        for (clsActivo activo : activos) {
+            obModelo.addRow(new object[]{
+                activo.getIdActivo(),
+                activo.getCodigo(),
+                activo.getNombre(),
+                activo.getTipo(),
+                activo.getFragilidad(),
+                activo.getDescripcion(),
+                activo.getCantidad(),
+                this.ObtenerEstado(activo.isEstado())
+            });
+        }
+            this.tActivos.setModel(obModelo);
+        
+    }
+   
+    private String ObtenerEstado(boolean estado) {
+        if (estado) {
+            return "Activo";
+        } else {
+            return "Inactivo";
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,7 +105,7 @@ public class frmListar extends javax.swing.JInternalFrame {
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JTable tActivos = new javax.swing.JTable();
         javax.swing.JLabel lbInformacionFiltrar = new javax.swing.JLabel();
-        javax.swing.JTextField txtBuscar = new javax.swing.JTextField();
+        javax.swing.JTextField txtBuscar1 = new javax.swing.JTextField();
         javax.swing.JLabel lbBuscar = new javax.swing.JLabel();
         javax.swing.JButton btnBuscar = new javax.swing.JButton();
         javax.swing.JButton btnLimpiarBuscador = new javax.swing.JButton();
@@ -77,14 +143,14 @@ public class frmListar extends javax.swing.JInternalFrame {
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbInformacionFiltrar.setText("Ingrese el código del activo.");
 
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
+                txtBuscar1ActionPerformed(evt);
             }
         });
-        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtBuscar1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscarKeyPressed(evt);
+                txtBuscar1KeyPressed(evt);
             }
         });
 
@@ -127,7 +193,7 @@ public class frmListar extends javax.swing.JInternalFrame {
                     .addGroup(panelListarLayout.createSequentialGroup()
                         .addComponent(lbBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelListarLayout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addComponent(lbInformacionFiltrar)))
@@ -140,7 +206,7 @@ public class frmListar extends javax.swing.JInternalFrame {
                 .addComponent(lbInformacionFiltrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -167,34 +233,37 @@ public class frmListar extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+    private void txtBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar1ActionPerformed
 
-    }//GEN-LAST:event_txtBuscarActionPerformed
+    }//GEN-LAST:event_txtBuscar1ActionPerformed
 
-    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
+    private void txtBuscar1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar1KeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.Buscar();
         }
-    }//GEN-LAST:event_txtBuscarKeyPressed
+    }//GEN-LAST:event_txtBuscar1KeyPressed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        this.btnBuscar.requestFocus();
         this.Buscar();
+        this.txtBuscar1.requestFocus();
     }//GEN-LAST:event_btnBuscarActionPerformed
-  private void Buscar() {
-       
-        String valor = this.btnBuscar.getText().trim().toLowerCase();
-        if (!valor.isEmpty() && !valor.isBlank()) {  
+    private void Buscar() {
+
+        String valor = this.txtBuscar1.getText().trim().toLowerCase();
+        if (!valor.isEmpty() && !valor.isBlank()) {
             ArrayList<clsActivo> activos = this.myGestor.ListarActivos();
             if (activos != null && !activos.isEmpty()) {
                 List<clsActivo> finales = activos.stream()
-                        .filter(activo -> activo.getCodigo().trim().toLowerCase().contains(valor)
-                        || activo.getNombre().trim().toLowerCase().contains(valor)
-                        || activo.getTipo().trim().toLowerCase().contains(valor)
-                        || activo.getFragilidad().trim().toLowerCase().contains(valor)                             
-                        || activo.getDescripcion().trim().toLowerCase().contains(valor)
-                        || (activo.getIdActivo() + "").trim().toLowerCase().contains(valor)
-                        ).collect(Collectors.toList());
+                        .filter(activo -> activo.getDescripcion().trim().toLowerCase().contains(valor)
+                                || (activo.getIdActivo() + "").trim().toLowerCase().contains(valor)
+                                || activo.getCodigo().trim().toLowerCase().contains(valor)
+                                || activo.getNombre().trim().toLowerCase().contains(valor)
+                                || activo.getCodigo().trim().toLowerCase().contains(valor)
+                                || activo.getTipo().trim().toLowerCase().contains(valor)
+                                || activo.getFragilidad().trim().toLowerCase().contains(valor)
+                                || activo.//getestado().trim().toLowerCase().contains(valor)
+                                || activo.getCantidad().trim().toLowerCase().contains(valor)
+                                 ).collect(Collectors.toList());
                 this.CargarTabla((ArrayList<clsActivo>) finales);
             }
         } else {
@@ -202,26 +271,23 @@ public class frmListar extends javax.swing.JInternalFrame {
         }
     }
     private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
-
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.Buscar();
+        }
     }//GEN-LAST:event_btnBuscarKeyPressed
 
     private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
-        this.btnLimpiarBuscador.setText("");
-        this.btnLimpiarBuscador.requestFocus();
+        this.txtBuscar1.setText("");
+        this.txtBuscar1.requestFocus();
         this.CargarTabla();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
 
-    
     // Variables declaration - do not modify                     
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelListar;
     private javax.swing.JTable tActivos;
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-
-    private static class clsActivos {
-
-        public clsActivos() {
-        }
-    }
 }

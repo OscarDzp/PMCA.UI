@@ -58,7 +58,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lbBuscar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtBuscar" min="-2" pref="329" max="-2" attributes="0"/>
+                          <Component id="txtBuscar1" min="-2" pref="329" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
@@ -76,7 +76,7 @@
                   <Component id="lbInformacionFiltrar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtBuscar1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -172,10 +172,10 @@
             <Property name="text" type="java.lang.String" value="Ingrese el c&#xf3;digo del activo."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtBuscar">
+        <Component class="javax.swing.JTextField" name="txtBuscar1">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBuscarActionPerformed"/>
-            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBuscarKeyPressed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBuscar1ActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBuscar1KeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbBuscar">

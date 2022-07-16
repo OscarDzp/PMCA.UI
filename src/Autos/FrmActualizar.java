@@ -636,8 +636,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         this.myGestor = new clsGestor();
 
-        clsAutos myAutos = new clsAutos(
-                this.idAuto,
+        clsAutos myAutos = new clsAutos( this.idAuto,
                 this.txtCódigo.getText(),
                 this.txtMarca.getText(),
                 this.txtModelo.getText(),
@@ -673,7 +672,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
 
         if (!codigo.isBlank() && !codigo.isEmpty()) {
-            clsAutos myAuto = this.myGestor.ConsultarAutos(codigo);
+            clsAutos myAuto = this.myGestor.ConsultarAutos(Integer.valueOf(title) );
 
             if (myAuto != null && myAuto.getIdAutos() > 0) {
                 this.btActualizar.setEnabled(true);
