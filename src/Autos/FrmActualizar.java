@@ -700,7 +700,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtKilometraje.setText(myAuto.getKilometraje());
                 this.txtEstado.setText(myAuto.getEstado());
                 this.comboxTipo.setSelectedItem(myAuto.getcomboxTipo);
-                this.txt.setText(myAuto.gettxtAnotaciones);
+                this.txtAnotaciones.setText(myAuto.getAnotaciones);
             } else {
                 JOptionPane.showMessageDialog(this, "NO se ha encontrado el Vehiculo.", "Aviso", JOptionPane.WARNING_MESSAGE);
                 this.btActualizar.setEnabled(false);
