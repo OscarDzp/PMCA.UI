@@ -570,8 +570,8 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             this.txtKilometraje.getText(),
             this.txtEstado.getText(),
             this.comboxTipo.getSelectedItem().toString(),
-            this.txtAnotaciones.getText(),
-            estado);
+            this.txtnotaciones.getText();
+            
 
         boolean operacion = myGestor.GuardarAutos(myAutos);
 

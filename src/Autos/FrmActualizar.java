@@ -675,7 +675,8 @@ private int idAuto;
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
 
         if (!codigo.isBlank() && !codigo.isEmpty()) {
-            clsAutos myAuto = this.myGestor.ConsultarAutos(codigo);
+            int Codigo = 0;
+            clsAutos myAuto = this.myGestor.ConsultarAutos(Codigo);
 
             if (myAuto != null && myAuto.getIdAutos() > 0) {
                 this.btActualizar.setEnabled(true);
