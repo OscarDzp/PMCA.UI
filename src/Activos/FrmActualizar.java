@@ -1,4 +1,3 @@
-
 package Activos;
 
 import Clases.clsActivo;
@@ -9,15 +8,19 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author oscar
+ * @author Oscar Zumbado Porras
  */
 public class FrmActualizar extends javax.swing.JInternalFrame {
+
+    private clsGestor myGestor;
+    private int idActivo;
 
     /**
      * Creates new form FrmActualizar
      */
     public FrmActualizar() {
         initComponents();
+        this.myGestor = new clsGestor();
     }
 
     /**
@@ -40,7 +43,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         separadorEncabezado = new javax.swing.JSeparator();
         lbCódigo = new javax.swing.JLabel();
         lbCódigoRequerido = new javax.swing.JLabel();
-        txtCódigo = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
         lbNombre = new javax.swing.JLabel();
         lbNombreRequerido = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
@@ -60,7 +63,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbDescripción = new javax.swing.JLabel();
         lbDescripcionRequerida = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtareaDescripción = new javax.swing.JTextArea();
+        txtareaDescripcion = new javax.swing.JTextArea();
         btLimpiar = new javax.swing.JButton();
         btActualizar = new javax.swing.JButton();
 
@@ -115,9 +118,9 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbCódigoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido.setText("*");
 
-        txtCódigo.addActionListener(new java.awt.event.ActionListener() {
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCódigoActionPerformed(evt);
+                txtCodigoActionPerformed(evt);
             }
         });
 
@@ -182,57 +185,55 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                        .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbCódigo)
-                                    .addComponent(lbNombre)
-                                    .addComponent(lbCantidad))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbCódigoRequerido)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                                        .addGap(57, 57, 57)
-                                        .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lbNombreRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lbCantidadRequerida)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroActivoLayout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(lbDescripción)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                                    .addComponent(txtCantidad)
-                                    .addComponent(lbDescripcionRequerida))))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                                .addComponent(lbFragilidad)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbFragilidadRequerido)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboxFragilidad, 0, 397, Short.MAX_VALUE))
-                            .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                                .addComponent(lbEstado)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbEstadoRequerido)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkActivo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(chkInactivo)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                                .addComponent(lbTipo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbTipoRequerido)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(comboxTipo, 0, 420, Short.MAX_VALUE))))
+                        .addComponent(lbCódigo)
+                        .addGap(15, 15, 15)
+                        .addComponent(lbCódigoRequerido)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(lbTipo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbTipoRequerido)
+                        .addGap(12, 12, 12)
+                        .addComponent(comboxTipo, 0, 432, Short.MAX_VALUE))
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(separadorEncabezado)))
+                        .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(separadorEncabezado)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroActivoLayout.createSequentialGroup()
+                                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbNombre)
+                                    .addComponent(lbCantidad)
+                                    .addGroup(panelRegistroActivoLayout.createSequentialGroup()
+                                        .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(panelRegistroActivoLayout.createSequentialGroup()
+                                                .addGap(57, 57, 57)
+                                                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(lbNombreRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(lbCantidadRequerida)))
+                                            .addComponent(lbDescripción, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtNombre)
+                                            .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lbDescripcionRequerida))))
+                                .addGap(18, 18, 18)
+                                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelRegistroActivoLayout.createSequentialGroup()
+                                        .addComponent(lbEstado)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lbEstadoRequerido)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(chkActivo)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(chkInactivo)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(panelRegistroActivoLayout.createSequentialGroup()
+                                        .addComponent(lbFragilidad)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lbFragilidadRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(comboxFragilidad, 0, 401, Short.MAX_VALUE)))))))
                 .addContainerGap())
         );
         panelRegistroActivoLayout.setVerticalGroup(
@@ -243,15 +244,15 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separadorEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboxTipo, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lbCódigo)
                         .addComponent(lbCódigoRequerido)
-                        .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbTipo)
-                        .addComponent(lbTipoRequerido)))
-                .addGap(18, 18, 18)
+                        .addComponent(lbTipoRequerido))
+                    .addComponent(comboxTipo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbNombre)
                     .addComponent(lbNombreRequerido)
@@ -266,18 +267,18 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                     .addComponent(lbCantidadRequerida)
                     .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbFragilidad)
-                    .addComponent(lbFragilidadRequerido)
-                    .addComponent(comboxFragilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                    .addComponent(comboxFragilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbFragilidadRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbDescripción, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbDescripcionRequerida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(lbDescripcionRequerida))
+                .addGap(75, 75, 75))
         );
 
-        txtareaDescripción.setColumns(20);
-        txtareaDescripción.setRows(5);
-        jScrollPane1.setViewportView(txtareaDescripción);
+        txtareaDescripcion.setColumns(20);
+        txtareaDescripcion.setRows(5);
+        jScrollPane1.setViewportView(txtareaDescripcion);
 
         btLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/clean-16.png"))); // NOI18N
         btLimpiar.setText("Limpiar");
@@ -303,7 +304,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelRegistroActivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -316,17 +316,19 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                                 .addComponent(lbBuscar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 271, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btActualizar)
-                        .addGap(31, 31, 31)
-                        .addComponent(btLimpiar)))
+                        .addGap(18, 18, 18)
+                        .addComponent(btLimpiar)
+                        .addGap(13, 13, 13)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(320, 320, 320)
                 .addComponent(lbInformacionFiltrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(panelRegistroActivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,10 +343,10 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLimpiarBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(panelRegistroActivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelRegistroActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btActualizar)
@@ -362,16 +364,16 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActualizarActionPerformed
-        if (this.txtCódigo.getText().trim().equals("")) {
+        if (this.txtCodigo.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.txtCódigo.requestFocus();
+            this.txtCodigo.requestFocus();
             return;
         }
         if (this.comboxTipo.getSelectedIndex() == 0) {
@@ -398,40 +400,34 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             this.comboxFragilidad.requestFocus();
             return;
         }
-        if (this.txtareaDescripción.getText().trim().equals("")) {
+        if (this.txtareaDescripcion.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "Introduzca la descripcion del activo.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.txtareaDescripción.requestFocus();
+            this.txtareaDescripcion.requestFocus();
             return;
         }
-        // creacion de objectos.
-        intzGestor myGestor = new clsGestor();
 
-        //estado en que nace el activo.
+        this.myGestor = new clsGestor();
+
         boolean estado;
         if (this.chkActivo.isSelected()) {
             estado = true;
         } else {
             estado = false;
         }
-
-        // objectos del activo.
         clsActivo myActivo = new clsActivo(
-            0,
-            this.txtCódigo.getText().trim(),
-            this.comboxTipo.getSelectedItem().toString(),
-            this.txtNombre.getText().trim(),
-            this.txtareaDescripción.getText().trim(),
-            estado,
-            Integer.parseInt(this.txtCantidad.getValue().toString()),
-            this.comboxFragilidad.getSelectedItem().toString());
-
-        // operacion de registro.
-        boolean operacion = myGestor.GuardarActivo(myActivo);
-        // validar resultaddo.
+                0,
+                this.txtCodigo.getText().trim(),
+                this.comboxTipo.getSelectedItem().toString(),
+                this.txtNombre.getText().trim(),
+                this.txtareaDescripcion.getText().trim(),
+                estado,
+                Integer.parseInt(this.txtCantidad.getValue().toString()),
+                this.comboxFragilidad.getSelectedItem().toString());
+        boolean operacion = myGestor.ActualizarActivo(myActivo);
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.LimpiarFormulario();
-            this.txtCódigo.requestFocus();
+            this.txtCodigo.requestFocus();
         } else {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -440,7 +436,18 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     private void btLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimpiarActionPerformed
         this.LimpiarFormulario();
     }//GEN-LAST:event_btLimpiarActionPerformed
-
+    private void LimpiarFormulario() {
+        this.txtCodigo.setText("");
+        this.txtBuscar.setText("");
+        this.comboxTipo.setSelectedIndex(0);
+        this.txtNombre.setText("");
+        this.chkInactivo.setSelected(false);
+        this.chkActivo.setSelected(false);
+        this.txtCantidad.setText("");
+        this.txtCantidad.setValue(null);
+        this.comboxFragilidad.setSelectedIndex(0);
+        this.txtareaDescripcion.setText("");
+    }
     private void chkInactivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkInactivoActionPerformed
         if (this.chkActivo.isSelected()) {
             this.chkActivo.setSelected(false);
@@ -453,9 +460,9 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_chkActivoActionPerformed
 
-    private void txtCódigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCódigoActionPerformed
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCódigoActionPerformed
+    }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
         this.txtBuscar.setText("");
@@ -470,6 +477,35 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         this.txtBuscar.requestFocus();
         this.Buscar();
     }//GEN-LAST:event_btnBuscarActionPerformed
+    private void Buscar() {
+        String codigo = this.txtBuscar.getText().trim().toLowerCase();
+
+        if (!codigo.isBlank() && !codigo.isEmpty()) {
+            clsActivo myEmpleado = this.myGestor.ConsultarActivo(Integer.valueOf(codigo));
+
+            if (myEmpleado != null && myEmpleado.getIdActivo() > 0) {
+                this.btActualizar.setEnabled(true);
+                this.idActivo = myEmpleado.getIdActivo();
+                this.txtCodigo.setText(myEmpleado.getCodigo());
+                this.txtNombre.setText(myEmpleado.getNombre());
+                this.txtCantidad.setText(myEmpleado.getCantidad() + "");
+                this.txtCantidad.setValue(myEmpleado.getCantidad());
+                this.comboxTipo.setSelectedItem(myEmpleado.getTipo());
+                if (myEmpleado.isEstado()) {
+                    this.chkActivo.setSelected(true);
+                } else {
+                    this.chkInactivo.setSelected(true);
+                }
+                this.txtareaDescripcion.setText(myEmpleado.getDescripcion());
+            } else {
+                JOptionPane.showMessageDialog(this, "No se ha encontrado ningun activo con ese codigo..",
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+                this.btActualizar.setEnabled(false);
+                this.txtBuscar.setText("");
+            }
+        }
+
+    }
 
     private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -514,16 +550,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator separadorEncabezado;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JFormattedTextField txtCantidad;
-    private javax.swing.JTextField txtCódigo;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextArea txtareaDescripción;
+    private javax.swing.JTextArea txtareaDescripcion;
     // End of variables declaration//GEN-END:variables
-
-    private void LimpiarFormulario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void Buscar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

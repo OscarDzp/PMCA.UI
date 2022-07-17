@@ -36,7 +36,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         separadorEncabezado = new javax.swing.JSeparator();
         lbCódigo = new javax.swing.JLabel();
         lbCódigoRequerido = new javax.swing.JLabel();
-        txtCódigo = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
         lbNombre = new javax.swing.JLabel();
         lbNombreRequerido = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
@@ -56,7 +56,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbDescripción = new javax.swing.JLabel();
         lbDescripcionRequerida = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtareaDescripción = new javax.swing.JTextArea();
+        txtareaDescripcion = new javax.swing.JTextArea();
         btGuardar = new javax.swing.JButton();
         btLimpiar = new javax.swing.JButton();
 
@@ -73,9 +73,9 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbCódigoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido.setText("*");
 
-        txtCódigo.addActionListener(new java.awt.event.ActionListener() {
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCódigoActionPerformed(evt);
+                txtCodigoActionPerformed(evt);
             }
         });
 
@@ -147,7 +147,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbCódigoRequerido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                         .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelRegistroActivoLayout.createSequentialGroup()
@@ -205,7 +205,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                     .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lbCódigo)
                         .addComponent(lbCódigoRequerido)
-                        .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbTipo)
                         .addComponent(lbTipoRequerido)))
                 .addGap(18, 18, 18)
@@ -232,9 +232,9 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        txtareaDescripción.setColumns(20);
-        txtareaDescripción.setRows(5);
-        jScrollPane1.setViewportView(txtareaDescripción);
+        txtareaDescripcion.setColumns(20);
+        txtareaDescripcion.setRows(5);
+        jScrollPane1.setViewportView(txtareaDescripcion);
 
         btGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/save-16.png"))); // NOI18N
         btGuardar.setText("Guardar");
@@ -285,9 +285,9 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCódigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCódigoActionPerformed
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCódigoActionPerformed
+    }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void chkActivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkActivoActionPerformed
         if (this.chkInactivo.isSelected()) {
@@ -308,18 +308,18 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 private void LimpiarFormulario(){
   this.txtCantidad.setText("");
         this.txtCantidad.setValue(null);
-        this.txtCódigo.setText("");
+        this.txtCodigo.setText("");
         this.txtNombre.setText("");
-        this.txtareaDescripción.setText("");
+        this.txtareaDescripcion.setText("");
         this.comboxTipo.setSelectedIndex(0);
         this.comboxFragilidad.setSelectedIndex(0);
         this.chkActivo.setSelected(false);
         this.chkInactivo.setSelected(false);
 }
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
-        if (this.txtCódigo.getText().trim().equals("")) {
+        if (this.txtCodigo.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.txtCódigo.requestFocus();
+            this.txtCodigo.requestFocus();
             return;
         }
         if (this.comboxTipo.getSelectedIndex() == 0) {
@@ -346,9 +346,9 @@ private void LimpiarFormulario(){
             this.comboxFragilidad.requestFocus();
             return;
         }
-        if (this.txtareaDescripción.getText().trim().equals("")) {
+        if (this.txtareaDescripcion.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "Introduzca la descripcion del activo.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.txtareaDescripción.requestFocus();
+            this.txtareaDescripcion.requestFocus();
             return;
         }
         // creacion de objectos.
@@ -365,10 +365,10 @@ private void LimpiarFormulario(){
         // objectos del activo.
         clsActivo myActivo = new clsActivo(
                 0,
-                this.txtCódigo.getText().trim(),
+                this.txtCodigo.getText().trim(),
                 this.comboxTipo.getSelectedItem().toString(),
                 this.txtNombre.getText().trim(),
-                this.txtareaDescripción.getText().trim(),
+                this.txtareaDescripcion.getText().trim(),
                 estado,
                 Integer.parseInt(this.txtCantidad.getValue().toString()),
                 this.comboxFragilidad.getSelectedItem().toString());
@@ -379,7 +379,7 @@ private void LimpiarFormulario(){
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
              this.LimpiarFormulario();
-             this.txtCódigo.requestFocus();
+             this.txtCodigo.requestFocus();
         } else {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -412,8 +412,8 @@ private void LimpiarFormulario(){
     private javax.swing.JPanel panelRegistroActivo;
     private javax.swing.JSeparator separadorEncabezado;
     private javax.swing.JFormattedTextField txtCantidad;
-    private javax.swing.JTextField txtCódigo;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextArea txtareaDescripción;
+    private javax.swing.JTextArea txtareaDescripcion;
     // End of variables declaration//GEN-END:variables
 }

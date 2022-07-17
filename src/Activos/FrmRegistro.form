@@ -82,7 +82,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lbCódigoRequerido" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtCódigo" min="-2" pref="282" max="-2" attributes="0"/>
+                          <Component id="txtCodigo" min="-2" pref="282" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -155,7 +155,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lbCódigo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lbCódigoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtCódigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lbTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lbTipoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -213,9 +213,9 @@
             <Property name="text" type="java.lang.String" value="*"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtC&#xf3;digo">
+        <Component class="javax.swing.JTextField" name="txtCodigo">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtC&#xf3;digoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbNombre">
@@ -366,7 +366,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="txtareaDescripci&#xf3;n">
+        <Component class="javax.swing.JTextArea" name="txtareaDescripcion">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
