@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 public class frmListar extends javax.swing.JInternalFrame {
 
     private clsGestor myGestor;
-    private Object txtBuscar1;
+ 
 
     /**
      * Creates new form frmListar
@@ -106,7 +106,7 @@ public class frmListar extends javax.swing.JInternalFrame {
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         javax.swing.JTable tActivos = new javax.swing.JTable();
         javax.swing.JLabel lbInformacionFiltrar = new javax.swing.JLabel();
-        javax.swing.JTextField txtBuscar1 = new javax.swing.JTextField();
+        javax.swing.JTextField txtBuscar = new javax.swing.JTextField();
         javax.swing.JLabel lbBuscar = new javax.swing.JLabel();
         javax.swing.JButton btnBuscar = new javax.swing.JButton();
         javax.swing.JButton btnLimpiarBuscador = new javax.swing.JButton();
@@ -144,14 +144,14 @@ public class frmListar extends javax.swing.JInternalFrame {
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbInformacionFiltrar.setText("Ingrese el código del activo.");
 
-        txtBuscar1.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscar1ActionPerformed(evt);
+                txtBuscarActionPerformed(evt);
             }
         });
-        txtBuscar1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscar1KeyPressed(evt);
+                txtBuscarKeyPressed(evt);
             }
         });
 
@@ -194,7 +194,7 @@ public class frmListar extends javax.swing.JInternalFrame {
                     .addGroup(panelListarLayout.createSequentialGroup()
                         .addComponent(lbBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelListarLayout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addComponent(lbInformacionFiltrar)))
@@ -207,7 +207,7 @@ public class frmListar extends javax.swing.JInternalFrame {
                 .addComponent(lbInformacionFiltrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -234,10 +234,9 @@ public class frmListar extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar1ActionPerformed
-        this.Buscar();
-        this.txtBuscar1.requestFocus();
-    }//GEN-LAST:event_txtBuscar1ActionPerformed
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+    
+    }//GEN-LAST:event_txtBuscarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
         this.txtBuscar.setText("");
@@ -246,19 +245,20 @@ public class frmListar extends javax.swing.JInternalFrame {
     }
 
 
-    private void txtBuscar1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar1KeyPressed
+    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.Buscar();
         }
-    }//GEN-LAST:event_txtBuscar1KeyPressed
+    }//GEN-LAST:event_txtBuscarKeyPressed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        this.Buscar();
-        this.txtBuscar1.requestFocus();
+     this.Buscar();
+        this.txtBuscar.requestFocus();
+      
     }//GEN-LAST:event_btnBuscarActionPerformed
     private void Buscar() {
 
-        String valor = this.txtBuscar1.getText().trim().toLowerCase();
+        String valor = this.txtBuscar.getText().trim().toLowerCase();
 
         if (!valor.isEmpty() && !valor.isBlank()) {
 
@@ -286,8 +286,8 @@ public class frmListar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarKeyPressed
 
     private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
-        this.txtBuscar1.setText("");
-        this.txtBuscar1.requestFocus();
+        this.txtBuscar.setText("");
+        this.txtBuscar.requestFocus();
         this.CargarTabla();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
 
@@ -297,8 +297,6 @@ public class frmListar extends javax.swing.JInternalFrame {
     private javax.swing.JTable tActivos;
 
 }
-}
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-}
+

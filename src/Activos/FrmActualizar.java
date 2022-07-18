@@ -415,7 +415,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             estado = false;
         }
         clsActivo myActivo = new clsActivo(
-                0,
+                   this.idActivo,
                 this.txtCodigo.getText().trim(),
                 this.comboxTipo.getSelectedItem().toString(),
                 this.txtNombre.getText().trim(),
@@ -491,6 +491,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtCantidad.setText(myEmpleado.getCantidad() + "");
                 this.txtCantidad.setValue(myEmpleado.getCantidad());
                 this.comboxTipo.setSelectedItem(myEmpleado.getTipo());
+                this.comboxFragilidad.setSelectedItem(myEmpleado.getTipo());
                 if (myEmpleado.isEstado()) {
                     this.chkActivo.setSelected(true);
                 } else {

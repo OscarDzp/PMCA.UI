@@ -263,9 +263,9 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btLimpiar)
+                        .addComponent(btGuardar)
                         .addGap(18, 18, 18)
-                        .addComponent(btGuardar)))
+                        .addComponent(btLimpiar)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

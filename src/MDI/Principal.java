@@ -52,6 +52,10 @@ public class Principal extends javax.swing.JFrame {
         registrarVehiculo = new javax.swing.JCheckBoxMenuItem();
         actualizarVehiculo = new javax.swing.JCheckBoxMenuItem();
         listarVehiculo = new javax.swing.JCheckBoxMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jRegistroEmpleado = new javax.swing.JCheckBoxMenuItem();
+        jActualizarEmpleado = new javax.swing.JCheckBoxMenuItem();
+        jListarEmpleado = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MCA-Modulo de Control de Activvos");
@@ -143,6 +147,41 @@ public class Principal extends javax.swing.JFrame {
 
         menuBar.add(autosMenu);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-user-male-16.png"))); // NOI18N
+        jMenu1.setText("Empleados");
+
+        jRegistroEmpleado.setSelected(true);
+        jRegistroEmpleado.setText("Registro de Empleado");
+        jRegistroEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-baby-16.png"))); // NOI18N
+        jRegistroEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRegistroEmpleadoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jRegistroEmpleado);
+
+        jActualizarEmpleado.setSelected(true);
+        jActualizarEmpleado.setText("Actualizar Empleado");
+        jActualizarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-pixel-man-16.png"))); // NOI18N
+        jActualizarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jActualizarEmpleadoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jActualizarEmpleado);
+
+        jListarEmpleado.setSelected(true);
+        jListarEmpleado.setText("Listar Empleados");
+        jListarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-engineer-16.png"))); // NOI18N
+        jListarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jListarEmpleadoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jListarEmpleado);
+
+        menuBar.add(jMenu1);
+
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -224,6 +263,35 @@ public class Principal extends javax.swing.JFrame {
     myForm.show();  
     }//GEN-LAST:event_listarVehiculoActionPerformed
 
+    private void jRegistroEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRegistroEmpleadoActionPerformed
+        Empleados.FrmRegistro myForm = new Empleados.FrmRegistro();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+    myForm.show(); 
+    }//GEN-LAST:event_jRegistroEmpleadoActionPerformed
+
+    private void jActualizarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jActualizarEmpleadoActionPerformed
+     Empleados.FrmActualizar myForm = new Empleados.FrmActualizar();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+    myForm.show();                                               
+    }//GEN-LAST:event_jActualizarEmpleadoActionPerformed
+
+    private void jListarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListarEmpleadoActionPerformed
+ Empleados.FrmListar myForm = new Empleados.FrmListar();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+        );
+    myForm.show();     }//GEN-LAST:event_jListarEmpleadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,6 +317,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem actualizarActivoMenu;
     private javax.swing.JCheckBoxMenuItem actualizarVehiculo;
     private javax.swing.JMenu autosMenu;
+    private javax.swing.JCheckBoxMenuItem jActualizarEmpleado;
+    private javax.swing.JCheckBoxMenuItem jListarEmpleado;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JCheckBoxMenuItem jRegistroEmpleado;
     private javax.swing.JMenuItem listadoActivoMenu;
     private javax.swing.JCheckBoxMenuItem listarVehiculo;
     private javax.swing.JMenuBar menuBar;

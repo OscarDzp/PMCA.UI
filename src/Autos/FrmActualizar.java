@@ -87,6 +87,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         btLimpiar = new javax.swing.JButton();
         lbCantidad5 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
         setTitle("Actualizar informacion de autos");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-car-16.png"))); // NOI18N
 
@@ -125,7 +127,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbBuscar.setText("Buscar:");
 
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lbInformacionFiltrar.setText("Ingrese el código del Empleado.");
+        lbInformacionFiltrar.setText("Ingrese el código del Auto.");
 
         lbCantidadRequerida2.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida2.setText("*");
@@ -280,7 +282,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                         .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbInformacionFiltrar)
                                     .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                         .addGap(309, 309, 309)
                                         .addComponent(btnBuscar)
@@ -388,7 +389,10 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                                                         .addGap(37, 37, 37)))
                                                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addComponent(txtEstado)
-                                                    .addComponent(txtKilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                    .addComponent(txtKilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(jActualizarCarroLayout.createSequentialGroup()
+                                        .addGap(312, 312, 312)
+                                        .addComponent(lbInformacionFiltrar)))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
@@ -400,9 +404,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         jActualizarCarroLayout.setVerticalGroup(
             jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jActualizarCarroLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(lbInformacionFiltrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbBuscar))
