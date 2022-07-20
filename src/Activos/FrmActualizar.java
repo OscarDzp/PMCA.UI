@@ -74,7 +74,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-update-16.png"))); // NOI18N
 
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lbInformacionFiltrar.setText("Ingrese el código del activo.");
+        lbInformacionFiltrar.setText("Ingrese el código de la herramienta.");
 
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +111,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbBuscar.setText("Buscar:");
 
         lbinfo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbinfo.setText("Ingrese la actualizacion de los activos.");
+        lbinfo.setText("Ingrese la actualizacion de la herramienta.");
+        lbinfo.setToolTipText("");
 
         lbCódigo.setText("Código:");
 

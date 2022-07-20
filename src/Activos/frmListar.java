@@ -142,7 +142,7 @@ public class frmListar extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tActivos);
 
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lbInformacionFiltrar.setText("Ingrese el código del activo.");
+        lbInformacionFiltrar.setText("Ingrese el código de la herramienta.");
 
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
