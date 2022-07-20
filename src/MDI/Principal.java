@@ -78,11 +78,11 @@ public class Principal extends javax.swing.JFrame {
 
         activosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/list-16.png"))); // NOI18N
         activosMenu.setMnemonic('e');
-        activosMenu.setText("Activos");
+        activosMenu.setText("Herramientas");
 
         registrarActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-save-16.png"))); // NOI18N
         registrarActivoMenu.setMnemonic('t');
-        registrarActivoMenu.setText("Registrar activos");
+        registrarActivoMenu.setText("Registrar herramienta");
         registrarActivoMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarActivoMenuActionPerformed(evt);
@@ -92,7 +92,7 @@ public class Principal extends javax.swing.JFrame {
 
         actualizarActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/update-16.png"))); // NOI18N
         actualizarActivoMenu.setMnemonic('y');
-        actualizarActivoMenu.setText("Actualizar activos");
+        actualizarActivoMenu.setText("Actualizar  herramientas");
         actualizarActivoMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actualizarActivoMenuActionPerformed(evt);
@@ -102,7 +102,7 @@ public class Principal extends javax.swing.JFrame {
 
         listadoActivoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/list-view-16.png"))); // NOI18N
         listadoActivoMenu.setMnemonic('d');
-        listadoActivoMenu.setText("Listado de activos");
+        listadoActivoMenu.setText("Listado de herramientas");
         listadoActivoMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listadoActivoMenuActionPerformed(evt);

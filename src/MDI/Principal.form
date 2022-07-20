@@ -33,7 +33,7 @@
               <Image iconType="3" name="/Recursos/Iconos/list-16.png"/>
             </Property>
             <Property name="mnemonic" type="int" value="101"/>
-            <Property name="text" type="java.lang.String" value="Activos"/>
+            <Property name="text" type="java.lang.String" value="Herramientas"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="registrarActivoMenu">
@@ -42,7 +42,7 @@
                   <Image iconType="3" name="/Recursos/Iconos/icons8-save-16.png"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="116"/>
-                <Property name="text" type="java.lang.String" value="Registrar activos"/>
+                <Property name="text" type="java.lang.String" value="Registrar herramienta"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registrarActivoMenuActionPerformed"/>
@@ -54,7 +54,7 @@
                   <Image iconType="3" name="/Recursos/Iconos/update-16.png"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="121"/>
-                <Property name="text" type="java.lang.String" value="Actualizar activos"/>
+                <Property name="text" type="java.lang.String" value="Actualizar  herramientas"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarActivoMenuActionPerformed"/>
@@ -66,7 +66,7 @@
                   <Image iconType="3" name="/Recursos/Iconos/list-view-16.png"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="100"/>
-                <Property name="text" type="java.lang.String" value="Listado de activos"/>
+                <Property name="text" type="java.lang.String" value="Listado de herramientas"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listadoActivoMenuActionPerformed"/>

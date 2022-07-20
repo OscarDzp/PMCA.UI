@@ -62,11 +62,11 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Formulario de registro de activos.");
+        setTitle("Formulario de registro de Herramientas.");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-save-16.png"))); // NOI18N
 
         lbinfo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbinfo.setText("Ingrese la informacion de los activos.");
+        lbinfo.setText("Ingrese la informacion de la herramienta.");
 
         lbCódigo.setText("Código:");
 
