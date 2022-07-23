@@ -96,7 +96,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="IbNombre" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="cbxTipoIdentificacion" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbTipoIdentificacion" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="lbTipoIdentificacionRequerido" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -168,7 +168,7 @@
                                   <Component id="IbCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtCodigoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lbCódigoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbxTipoIdentificacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbTipoIdentificacion" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lbTipoIdentificacionRequerido" alignment="3" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -280,7 +280,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="cbxTipoIdentificacion">
+        <Component class="javax.swing.JLabel" name="lbTipoIdentificacion">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tipo de identificaci&#xf3;n:"/>
           </Properties>

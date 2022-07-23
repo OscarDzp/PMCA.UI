@@ -34,7 +34,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         txtCodigoEmpleado = new javax.swing.JTextField();
         lbCódigoRequerido = new javax.swing.JLabel();
         cbxTipoDeIdentificacion = new javax.swing.JComboBox<>();
-        cbxTipoIdentificacion = new javax.swing.JLabel();
+        lbTipoIdentificacion = new javax.swing.JLabel();
         lbTipoIdentificacionRequerido = new javax.swing.JLabel();
         IbIdentificacion = new javax.swing.JLabel();
         txtIdentificacion = new javax.swing.JTextField();
@@ -88,7 +88,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             }
         });
 
-        cbxTipoIdentificacion.setText("Tipo de identificación:");
+        lbTipoIdentificacion.setText("Tipo de identificación:");
 
         lbTipoIdentificacionRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbTipoIdentificacionRequerido.setText("*");
@@ -192,7 +192,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                         .addGroup(CorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(IbNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(CorreoLayout.createSequentialGroup()
-                                .addComponent(cbxTipoIdentificacion)
+                                .addComponent(lbTipoIdentificacion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lbTipoIdentificacionRequerido))
                             .addComponent(IbSegundoApellido)
@@ -248,7 +248,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                                 .addComponent(IbCodigo)
                                 .addComponent(txtCodigoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lbCódigoRequerido)
-                                .addComponent(cbxTipoIdentificacion)
+                                .addComponent(lbTipoIdentificacion)
                                 .addComponent(lbTipoIdentificacionRequerido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(CorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CorreoLayout.createSequentialGroup()
@@ -355,9 +355,9 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             return;
         }
 
-        if (this.cbxTipoIdentificacion.getText().trim().equals("")) {
+        if (this.lbTipoIdentificacion.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El tipo de identificación es requerida.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.cbxTipoIdentificacion.requestFocus();
+            this.lbTipoIdentificacion.requestFocus();
             return;
         }
 
@@ -405,10 +405,13 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         } else {
             estado = false;
         }
-        clsEmpleado myEmpleado = new clsEmpleado(
+        
+ 
+        
+     // ordenar variables.   clsEmpleado myEmpleado = new clsEmpleado(
                 0,
                 this.txtCodigoEmpleado.getText(),
-                this.cbxTipoIdentificacion.getSelectedItem().toString(),
+                this.cbxTipoDeIdentificacion.getSelectedItem().toString(),
                 this.txtIdentificacion.getText(),
                 this.txtNombre.getText(),
                 this.txtPrimerApellido.getText(),
@@ -436,7 +439,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btLimpiarActionPerformed
     private void LimpiarFormulario() {
         this.txtCodigoEmpleado.setText("");
-        this.cbxTipoIdentificacion.setSelectedIndex(0);
+        this.cbxTipoDeIdentificacion.setSelectedIndex(0);
         this.txtIdentificacion.setText("");
         this.txtNombre.setText("");
         this.txtPrimerApellido.setText("");
@@ -471,12 +474,12 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
     private javax.swing.JButton btGuardar;
     private javax.swing.JButton btLimpiar;
     private javax.swing.JComboBox<String> cbxTipoDeIdentificacion;
-    private javax.swing.JLabel cbxTipoIdentificacion;
     private javax.swing.JCheckBox chkActivo;
     private javax.swing.JCheckBox chkInactivo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbCódigoRequerido;
     private javax.swing.JLabel lbEstado;
+    private javax.swing.JLabel lbTipoIdentificacion;
     private javax.swing.JLabel lbTipoIdentificacionRequerido;
     private javax.swing.JLabel lbinfo;
     private javax.swing.JSeparator separadorEncabezado;

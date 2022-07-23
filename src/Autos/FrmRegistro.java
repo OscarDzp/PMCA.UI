@@ -553,7 +553,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         intzGestor myGestor = new clsGestor();
 
-        clsAutos myAutos = new clsAutos(
+   // ordenar variables, y quitar ñ y ¨     clsAutos myAutos = new clsAutos(
             0,
             this.txtCodigo.getText(),
             this.txtMarca.getText(),
@@ -568,8 +568,8 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             this.txtChasis.getText(),
             this.txtKilometraje.getText(),
             this.txtEstado.getText(),
-            this.comboxTipo.getSelectedItem().toString(),
-            this.txtAnotaciones.getText().trim());
+        //crear variable     this.comboxTipo.getSelectedItem().toString(),
+              //crear variable          this.txtAnotaciones.getText().trim());
                 
         
         boolean operacion = myGestor.GuardarAutos(myAutos);
