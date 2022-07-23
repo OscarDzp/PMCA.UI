@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
-package Activos;
+package Herramientas;
 
 import Clases.clsActivo;
 import Interfaces.intzGestor;
@@ -84,12 +80,12 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbNombreRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbNombreRequerido.setText("*");
 
-        lbCantidad.setText("Cantidad:");
+        lbCantidad.setText("Disponibilidad:");
 
         lbCantidadRequerida.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida.setText("*");
 
-        lbTipo.setText("Tipo:");
+        lbTipo.setText("Tipo de herramienta:");
 
         lbTipoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbTipoRequerido.setText("*");
@@ -138,39 +134,42 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 .addComponent(lbinfo)
                 .addGap(193, 193, 193))
             .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRegistroActivoLayout.createSequentialGroup()
-                        .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbCódigo)
-                            .addComponent(lbNombre)
-                            .addComponent(lbCantidad))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbCódigoRequerido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                         .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                                 .addGap(57, 57, 57)
-                                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbNombreRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbCantidadRequerida)))
+                                .addComponent(lbNombreRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroActivoLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(lbDescripción)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                            .addComponent(txtCantidad)
-                            .addComponent(lbDescripcionRequerida))))
-                .addGap(18, 18, 18)
+                        .addComponent(lbDescripcionRequerida))
+                    .addGroup(panelRegistroActivoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbCantidad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbCantidadRequerida)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCantidad))
+                    .addGroup(panelRegistroActivoLayout.createSequentialGroup()
+                        .addComponent(lbCódigo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbCódigoRequerido)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRegistroActivoLayout.createSequentialGroup()
+                        .addComponent(lbNombre)
+                        .addGap(38, 38, 38)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 41, Short.MAX_VALUE)
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                         .addComponent(lbFragilidad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbFragilidadRequerido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboxFragilidad, 0, 181, Short.MAX_VALUE))
+                        .addComponent(comboxFragilidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                         .addComponent(lbEstado)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,7 +184,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbTipoRequerido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(comboxTipo, 0, 204, Short.MAX_VALUE)))
+                        .addComponent(comboxTipo, 0, 132, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(panelRegistroActivoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -218,14 +217,15 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                     .addComponent(chkActivo)
                     .addComponent(chkInactivo))
                 .addGap(18, 18, 18)
-                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbCantidad)
-                    .addComponent(lbCantidadRequerida)
-                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbFragilidad)
-                    .addComponent(lbFragilidadRequerido)
-                    .addComponent(comboxFragilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbCantidadRequerida)
+                        .addComponent(lbFragilidad)
+                        .addComponent(lbFragilidadRequerido)
+                        .addComponent(comboxFragilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbCantidad))
+                    .addComponent(txtCantidad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addGroup(panelRegistroActivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbDescripción, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbDescripcionRequerida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

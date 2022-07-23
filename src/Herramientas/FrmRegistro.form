@@ -72,26 +72,12 @@
                   <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbCódigo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbNombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbCantidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lbCódigoRequerido" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtCodigo" min="-2" pref="282" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lbNombreRequerido" alignment="0" min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="lbCantidadRequerida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lbNombreRequerido" min="-2" pref="10" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -99,21 +85,37 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtNombre" pref="283" max="32767" attributes="0"/>
-                              <Component id="txtCantidad" max="32767" attributes="0"/>
-                              <Component id="lbDescripcionRequerida" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="lbDescripcionRequerida" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lbCantidad" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lbCantidadRequerida" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="txtCantidad" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lbCódigo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lbCódigoRequerido" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="txtCodigo" min="-2" pref="282" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lbNombre" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="txtNombre" min="-2" pref="283" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" pref="41" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="lbFragilidad" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lbFragilidadRequerido" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="comboxFragilidad" pref="181" max="32767" attributes="0"/>
+                          <Component id="comboxFragilidad" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="lbEstado" min="-2" max="-2" attributes="0"/>
@@ -130,7 +132,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lbTipoRequerido" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="comboxTipo" pref="204" max="32767" attributes="0"/>
+                          <Component id="comboxTipo" pref="132" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -171,15 +173,17 @@
                       <Component id="chkInactivo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbCantidadRequerida" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbFragilidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbFragilidadRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="comboxFragilidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbCantidadRequerida" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbFragilidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbFragilidadRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="comboxFragilidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="txtCantidad" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace min="34" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lbDescripción" max="32767" attributes="0"/>
                       <Component id="lbDescripcionRequerida" max="32767" attributes="0"/>
@@ -235,7 +239,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lbCantidad">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cantidad:"/>
+            <Property name="text" type="java.lang.String" value="Disponibilidad:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbCantidadRequerida">
@@ -248,7 +252,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lbTipo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tipo:"/>
+            <Property name="text" type="java.lang.String" value="Tipo de herramienta:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbTipoRequerido">

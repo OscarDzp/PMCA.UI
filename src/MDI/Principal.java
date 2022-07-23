@@ -204,7 +204,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_salirSistemaMenuActionPerformed
 
     private void registrarActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActivoMenuActionPerformed
-        Activos.FrmRegistro myForm = new Activos.FrmRegistro();
+        Herramientas.FrmRegistro myForm = new Herramientas.FrmRegistro();
         this.menuPrincipal.add(myForm);
         myForm.setLocation(
                 (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
@@ -214,7 +214,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarActivoMenuActionPerformed
 
     private void listadoActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActivoMenuActionPerformed
-        Activos.frmListar myForm = new Activos.frmListar();
+        Herramientas.frmListar myForm = new Herramientas.frmListar();
         this.menuPrincipal.add(myForm);
         myForm.setLocation(
                 (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
@@ -224,7 +224,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_listadoActivoMenuActionPerformed
 
     private void actualizarActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActivoMenuActionPerformed
-        Activos.FrmActualizar myForm = new Activos.FrmActualizar();
+        Herramientas.FrmActualizar myForm = new Herramientas.FrmActualizar();
         this.menuPrincipal.add(myForm);
         myForm.setLocation(
                 (menuPrincipal.getSize().width - myForm.getSize().width) / 2,

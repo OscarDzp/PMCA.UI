@@ -1,4 +1,4 @@
-package Activos;
+package Herramientas;
 
 import Clases.clsActivo;
 import Interfaces.intzGestor;

@@ -162,13 +162,15 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="separadorEncabezado" min="-2" pref="14" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="IbCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCodigoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbCódigoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbxTipoIdentificacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="cbxTipoDeIdentificacion" alignment="1" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="lbTipoIdentificacionRequerido" alignment="3" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="IbCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCodigoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbCódigoRequerido" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbxTipoIdentificacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbTipoIdentificacionRequerido" alignment="3" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">

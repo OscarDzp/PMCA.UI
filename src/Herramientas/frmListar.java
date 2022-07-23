@@ -1,4 +1,4 @@
-package Activos;
+package Herramientas;
 
 import Clases.clsActivo;
 import Seguridad.clsGestor;
@@ -144,11 +144,6 @@ public class frmListar extends javax.swing.JInternalFrame {
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbInformacionFiltrar.setText("Ingrese el código de la herramienta.");
 
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
-            }
-        });
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyPressed(evt);
@@ -234,22 +229,13 @@ public class frmListar extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
-    
-    }//GEN-LAST:event_txtBuscarActionPerformed
-
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
+        
         this.txtBuscar.setText("");
         this.txtBuscar.requestFocus();
         this.CargarTabla();
     }
 
-
-    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            this.Buscar();
-        }
-    }//GEN-LAST:event_txtBuscarKeyPressed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
      this.Buscar();
@@ -291,12 +277,20 @@ public class frmListar extends javax.swing.JInternalFrame {
         this.CargarTabla();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
 
+    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.Buscar();
+        }
+    }//GEN-LAST:event_txtBuscarKeyPressed
+
     // Variables declaration - do not modify                     
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelListar;
     private javax.swing.JTable tActivos;
+    
 
-}
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 
+}
