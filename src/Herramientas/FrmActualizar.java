@@ -70,7 +70,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setResizable(true);
-        setTitle("Actualizar Activo");
+        setTitle("Actualizar herramienta");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-update-16.png"))); // NOI18N
 
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -419,6 +419,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                    this.idActivo,
                 this.txtCodigo.getText().trim(),
                 this.comboxTipo.getSelectedItem().toString(),
+                 this.comboxFragilidad.getSelectedItem().toString(),
                 this.txtNombre.getText().trim(),
                 this.txtareaDescripcion.getText().trim(),
                 estado,
@@ -492,7 +493,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtCantidad.setText(myEmpleado.getCantidad() + "");
                 this.txtCantidad.setValue(myEmpleado.getCantidad());
                 this.comboxTipo.setSelectedItem(myEmpleado.getTipo());
-                this.comboxFragilidad.setSelectedItem(myEmpleado.getTipo());
+                this.comboxFragilidad.setSelectedItem(myEmpleado.getFragilidad());
                 if (myEmpleado.isEstado()) {
                     this.chkActivo.setSelected(true);
                 } else {

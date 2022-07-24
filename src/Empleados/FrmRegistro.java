@@ -408,7 +408,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         
  
         
-     // ordenar variables.   clsEmpleado myEmpleado = new clsEmpleado(
+     clsEmpleado myEmpleado = new clsEmpleado(
                 0,
                 this.txtCodigoEmpleado.getText(),
                 this.cbxTipoDeIdentificacion.getSelectedItem().toString(),
@@ -416,7 +416,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 this.txtNombre.getText(),
                 this.txtPrimerApellido.getText(),
                 this.txtSegundoApellido.getText(),
-                this.txtDireccion.getText(),
+                this.txtDireccion.getText(),             
                 this.txtPuesto.getText(),
                 this.txtCorreo.getText(),
                 this.txtTelefono.getText(),

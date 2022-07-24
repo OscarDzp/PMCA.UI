@@ -367,6 +367,7 @@ private void LimpiarFormulario(){
                 0,
                 this.txtCodigo.getText().trim(),
                 this.comboxTipo.getSelectedItem().toString(),
+                this.comboxFragilidad.getSelectedItem().toString(),
                 this.txtNombre.getText().trim(),
                 this.txtareaDescripcion.getText().trim(),
                 estado,
