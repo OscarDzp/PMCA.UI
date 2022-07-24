@@ -63,7 +63,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
-        setMaximizable(true);
         setTitle("Formulario de registro de empleados.");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-save-16.1.png"))); // NOI18N
 
@@ -338,12 +337,17 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             this.txtCodigoEmpleado.requestFocus();
             return;
         }
-
+        if (this.cbxTipoDeIdentificacion.getSelectedIndex() == 0){
+            JOptionPane.showMessageDialog(this, "El tipo de identificación es requerida.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            this.cbxTipoDeIdentificacion.requestFocus();
+            return;
+        }
         if (this.txtNombre.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El nombre es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.txtNombre.requestFocus();
             return;
         }
+        
         if (this.txtPrimerApellido.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El primer apellido es requerido.", "Aviso", JOptionPane.WARNING_MESSAGE);
             this.txtPrimerApellido.requestFocus();
@@ -354,13 +358,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             this.txtSegundoApellido.requestFocus();
             return;
         }
-
-        if (this.lbTipoIdentificacion.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(this, "El tipo de identificación es requerida.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.lbTipoIdentificacion.requestFocus();
-            return;
-        }
-
         if (this.txtIdentificacion.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "La identificación es requerida.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.txtIdentificacion.requestFocus();

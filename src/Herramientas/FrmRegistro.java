@@ -351,18 +351,16 @@ private void LimpiarFormulario(){
             this.txtareaDescripcion.requestFocus();
             return;
         }
-        // creacion de objectos.
+        
         intzGestor myGestor = new clsGestor();
 
-        //estado en que nace el activo.
+       
         boolean estado;
         if (this.chkActivo.isSelected()) {
             estado = true;
         } else {
             estado = false;
         }
-
-        // objectos del activo.
         clsActivo myActivo = new clsActivo(
                 0,
                 this.txtCodigo.getText().trim(),
@@ -373,10 +371,7 @@ private void LimpiarFormulario(){
                 estado,
                 Integer.parseInt(this.txtCantidad.getValue().toString()),
                 this.comboxFragilidad.getSelectedItem().toString());
-
-        // operacion de registro.
         boolean operacion = myGestor.GuardarActivo(myActivo);
-        // validar resultaddo.
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
              this.LimpiarFormulario();

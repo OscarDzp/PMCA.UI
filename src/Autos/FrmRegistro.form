@@ -131,7 +131,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="lbTipoRequerido" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="comboxTipo" pref="262" max="32767" attributes="0"/>
+                                          <Component id="comboxTipoEstilo" pref="262" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -225,7 +225,7 @@
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="comboxTipo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="comboxTipoEstilo" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -612,7 +612,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btLimpiarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboxTipo">
+        <Component class="javax.swing.JComboBox" name="comboxTipoEstilo">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="18">

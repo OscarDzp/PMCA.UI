@@ -74,7 +74,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAnotaciones = new javax.swing.JTextArea();
         btLimpiar = new javax.swing.JButton();
-        comboxTipo = new javax.swing.JComboBox<>();
+        comboxTipoEstilo = new javax.swing.JComboBox<>();
         btGuardar = new javax.swing.JButton();
         txtEstado = new javax.swing.JFormattedTextField();
 
@@ -219,7 +219,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             }
         });
 
-        comboxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el tipo", "4x4", "4x2", "Compactos", "Crossover", "Coupé", "Deportivos", "Crossover", "Convertibles", "Hatchback", "MPV", "Pick-up", "Sedán", "Station Wagon", "SUV", "Utilitarios", " ", " " }));
+        comboxTipoEstilo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el tipo", "4x4", "4x2", "Compactos", "Crossover", "Coupé", "Deportivos", "Crossover", "Convertibles", "Hatchback", "MPV", "Pick-up", "Sedán", "Station Wagon", "SUV", "Utilitarios", " ", " " }));
 
         btGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/save-16.png"))); // NOI18N
         btGuardar.setText("Guardar");
@@ -303,7 +303,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lbTipoRequerido)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(comboxTipo, 0, 262, Short.MAX_VALUE))
+                                        .addComponent(comboxTipoEstilo, 0, 262, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -372,7 +372,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                                         .addComponent(lbTipo))
                                     .addComponent(lbTipoRequerido))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(comboxTipo))
+                            .addComponent(comboxTipoEstilo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbMarca)
@@ -480,9 +480,9 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             this.txtCodigo.requestFocus();
             return;
         }
-        if (this.comboxTipo.getSelectedIndex() == 0) {
+        if (this.comboxTipoEstilo.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Seleccione el estilo del auto.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.comboxTipo.requestFocus();
+            this.comboxTipoEstilo.requestFocus();
             return;
         }
         if (this.txtMarca.getText().trim().equals("")) {
@@ -553,23 +553,23 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         intzGestor myGestor = new clsGestor();
 
-   // ordenar variables, y quitar ñ y ¨     clsAutos myAutos = new clsAutos(
+   clsAutos myAutos = new clsAutos(
             0,
             this.txtCodigo.getText(),
             this.txtMarca.getText(),
             this.txtModelo.getText(),
             this.txtAno.getText(),
-            this.txtPasajeros.getText(),
-            this.txtTransmision.getText(),
-            this.txtValor.getText(),
+            this.comboxTipoEstilo.getSelectedItem().toString(),
             this.txtMotor.getText(),
             this.txtCilidrada.getText(),
-            this.txtCombustible.getText(),
-            this.txtChasis.getText(),
+            this.txtCombustible.getText(),                
+            this.txtPasajeros.getText(),
+            this.txtChasis.getText(),          
+            this.txtTransmision.getText(),
             this.txtKilometraje.getText(),
             this.txtEstado.getText(),
-        //crear variable     this.comboxTipo.getSelectedItem().toString(),
-              //crear variable          this.txtAnotaciones.getText().trim());
+            this.txtValor.getText(),
+            this.txtAnotaciones.getText().trim());
                 
         
         boolean operacion = myGestor.GuardarAutos(myAutos);
@@ -596,14 +596,14 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         this.txtChasis.setText("");
         this.txtKilometraje.setText("");
         this.txtEstado.setText("");
-        this.comboxTipo.setSelectedIndex(0);
+        this.comboxTipoEstilo.setSelectedIndex(0);
         this.txtAnotaciones.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btGuardar;
     private javax.swing.JButton btLimpiar;
-    private javax.swing.JComboBox<String> comboxTipo;
+    private javax.swing.JComboBox<String> comboxTipoEstilo;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jlTitulo;
