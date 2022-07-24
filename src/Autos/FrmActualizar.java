@@ -49,7 +49,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbCantidadRequerida8 = new javax.swing.JLabel();
         lbCantidadRequerida6 = new javax.swing.JLabel();
         lbTipoRequerido = new javax.swing.JLabel();
-        txtCódigo = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
         lbCantidad3 = new javax.swing.JLabel();
         lbCilindrada = new javax.swing.JLabel();
         lbCantidad6 = new javax.swing.JLabel();
@@ -59,7 +59,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         txtCilidrada = new javax.swing.JFormattedTextField();
         txtModelo = new javax.swing.JTextField();
         lbMarca = new javax.swing.JLabel();
-        comboxTipo = new javax.swing.JComboBox<>();
+        comboxTipoEstilo = new javax.swing.JComboBox<>();
         lbTipo = new javax.swing.JLabel();
         lbCantidad1 = new javax.swing.JLabel();
         txtMarca = new javax.swing.JTextField();
@@ -77,7 +77,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbCódigoRequerido = new javax.swing.JLabel();
         txtTransmision = new javax.swing.JFormattedTextField();
         lbCódigoRequerido3 = new javax.swing.JLabel();
-        txtAño = new javax.swing.JFormattedTextField();
+        txtAno = new javax.swing.JFormattedTextField();
         lbCódigo = new javax.swing.JLabel();
         txtValor = new javax.swing.JFormattedTextField();
         lbCantidadRequerida4 = new javax.swing.JLabel();
@@ -157,9 +157,9 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbTipoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbTipoRequerido.setText("*");
 
-        txtCódigo.addActionListener(new java.awt.event.ActionListener() {
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCódigoActionPerformed(evt);
+                txtCodigoActionPerformed(evt);
             }
         });
 
@@ -190,7 +190,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         lbMarca.setText("Marca:");
 
-        comboxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el tipo", "4x4", "4x2", "Compactos", "Crossover", "Coupé", "Deportivos", "Crossover", "Convertibles", "Hatchback", "MPV", "Pick-up", "Sedán", "Station Wagon", "SUV", "Utilitarios", " ", " " }));
+        comboxTipoEstilo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el tipo", "4x4", "4x2", "Compactos", "Crossover", "Coupé", "Deportivos", "Crossover", "Convertibles", "Hatchback", "MPV", "Pick-up", "Sedán", "Station Wagon", "SUV", "Utilitarios", " ", " " }));
 
         lbTipo.setText("Estilo de Auto:");
 
@@ -241,7 +241,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbCódigoRequerido3.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido3.setText("*");
 
-        txtAño.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        txtAno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         lbCódigo.setText("Código:");
 
@@ -337,8 +337,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                                                         .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                             .addComponent(txtModelo, javax.swing.GroupLayout.Alignment.LEADING)
                                                             .addComponent(txtMarca, javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                            .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jActualizarCarroLayout.createSequentialGroup()
                                                     .addComponent(lbDescripción)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -350,7 +350,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(lbTipoRequerido)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(comboxTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(comboxTipoEstilo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addGroup(jActualizarCarroLayout.createSequentialGroup()
@@ -420,13 +420,13 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                             .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lbCódigo)
                                         .addComponent(lbCódigoRequerido)
                                         .addComponent(lbTipo))
                                     .addComponent(lbTipoRequerido))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(comboxTipo))
+                            .addComponent(comboxTipoEstilo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbMarca)
@@ -449,7 +449,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCantidad)
                     .addComponent(lbCantidadRequerida)
-                    .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbCombustible)
                     .addComponent(lbCantidadRequerida2)
                     .addComponent(txtCombustible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -518,10 +518,10 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         this.txtBuscar.requestFocus();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
     private void LimpiarFormulario() {
-        this.txtCódigo.setText("");
+        this.txtCodigo.setText("");
         this.txtMarca.setText("");
         this.txtModelo.setText("");
-        this.txtAño.setText("");
+        this.txtAno.setText("");
         this.txtPasajeros.setText("");
         this.txtTransmision.setText("");
         this.txtValor.setText("");
@@ -531,7 +531,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         this.txtChasis.setText("");
         this.txtKilometraje.setText("");
         this.txtEstado.setText("");
-        this.comboxTipo.setSelectedIndex(0);
+        this.comboxTipoEstilo.setSelectedIndex(0);
         this.txtAnotaciones.setText("");
     }
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
@@ -544,9 +544,9 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtBuscarKeyPressed
 
-    private void txtCódigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCódigoActionPerformed
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCódigoActionPerformed
+    }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void txtMotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMotorActionPerformed
         // TODO add your handling code here:
@@ -561,14 +561,14 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtMarcaActionPerformed
 
     private void btActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActualizarActionPerformed
-        if (this.txtCódigo.getText().trim().equals("")) {
+        if (this.txtCodigo.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.txtCódigo.requestFocus();
+            this.txtCodigo.requestFocus();
             return;
         }
-        if (this.comboxTipo.getSelectedIndex() == 0) {
+        if (this.comboxTipoEstilo.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Seleccione el estilo del auto.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.comboxTipo.requestFocus();
+            this.comboxTipoEstilo.requestFocus();
             return;
         }
         if (this.txtMarca.getText().trim().equals("")) {
@@ -591,9 +591,9 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             this.txtCilidrada.requestFocus();
             return;
         }
-        if (this.txtAño.getText().trim().equals("")) {
+        if (this.txtAno.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "Introduzca el año del vehiculo.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.txtAño.requestFocus();
+            this.txtAno.requestFocus();
             return;
         }
         if (this.txtCombustible.getText().trim().equals("")) {
@@ -639,30 +639,31 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         this.myGestor = new clsGestor();
 
-     // ordenar ello   clsAutos myAutos = new clsAutos( this.idAuto,
-                this.txtCódigo.getText(),
-                this.txtMarca.getText(),
-                this.txtModelo.getText(),
-                this.txtAño.getText(),
-                this.txtPasajeros.getText(),
-                this.txtTransmision.getText(),
-                this.txtValor.getText(),
-                this.txtMotor.getText(),
-                this.txtCilidrada.getText(),
-                this.txtCombustible.getText(),
-                this.txtChasis.getText(),
-                this.txtKilometraje.getText(),
-                this.txtEstado.getText(),
-                this.comboxTipo.getSelectedItem().toString(),
-                this.txtAnotaciones.getText(),
-                txtEstado.getValue().toString(), 0);
+    clsAutos myAutos = new clsAutos(
+                this.idAuto,
+                this.txtCodigo.getText().trim(),
+                this.txtMarca.getText().trim(),
+                this.txtModelo.getText().trim(),
+                this.txtAno.getText().trim(),
+                this.comboxTipoEstilo.getSelectedItem().toString(),
+                this.txtMotor.getText().trim(),
+                this.txtCilidrada.getText().trim(),
+                this.txtCombustible.getText().trim(),
+                Integer.parseInt(this.txtPasajeros.getValue().toString()),
+                this.txtChasis.getText().trim(),
+                this.txtTransmision.getText().trim(),
+                this.txtKilometraje.getText().trim(),
+                this.txtEstado.getText().trim(),
+                Integer.parseInt(this.txtValor.getValue().toString()),
+                this.txtAnotaciones.getText().trim()            
+            );
 
         boolean operacion = myGestor.ActualizarAutos(myAutos);
 
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.LimpiarFormulario();
-            this.txtCódigo.requestFocus();
+            this.txtCodigo.requestFocus();
         } else {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.ERROR_MESSAGE);
         }
@@ -684,8 +685,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtMarca.setText(myAuto.getMarca());
                 this.txtModelo.setText(myAuto.getModelo());
                 this.txtModelo.setText(myAuto.getModelo() + "");
-                this.txtAño.setText(myAuto.getAño() + "");
-                this.txtAño.setValue(myAuto.getAño());
+                this.txtAno.setText(myAuto.getAño() + "");
+                this.txtAno.setValue(myAuto.getAño());
                 this.txtPasajeros.setValue(myAuto.getPasajeros());
                 this.txtPasajeros.setValue(myAuto.getPasajeros() + "");
                 this.txtTransmision.setText(myAuto.getTransmision());
@@ -718,7 +719,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     private javax.swing.JButton btLimpiar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnLimpiarBuscador;
-    private javax.swing.JComboBox<String> comboxTipo;
+    private javax.swing.JComboBox<String> comboxTipoEstilo;
     private javax.swing.JPanel jActualizarCarro;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbBuscar;
@@ -753,13 +754,13 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lbMotor;
     private javax.swing.JLabel lbTipo;
     private javax.swing.JLabel lbTipoRequerido;
+    private javax.swing.JFormattedTextField txtAno;
     private javax.swing.JTextArea txtAnotaciones;
-    private javax.swing.JFormattedTextField txtAño;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JFormattedTextField txtChasis;
     private javax.swing.JFormattedTextField txtCilidrada;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JFormattedTextField txtCombustible;
-    private javax.swing.JTextField txtCódigo;
     private javax.swing.JFormattedTextField txtEstado;
     private javax.swing.JFormattedTextField txtKilometraje;
     private javax.swing.JTextField txtMarca;

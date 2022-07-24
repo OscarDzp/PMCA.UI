@@ -553,27 +553,25 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         intzGestor myGestor = new clsGestor();
 
-   clsAutos myAutos = new clsAutos(
-            0,
-            this.txtCodigo.getText(),
-            this.txtMarca.getText(),
-            this.txtModelo.getText(),
-            this.txtAno.getText(),
-            this.comboxTipoEstilo.getSelectedItem().toString(),
-            this.txtMotor.getText(),
-            this.txtCilidrada.getText(),
-            this.txtCombustible.getText(),                
-            this.txtPasajeros.getText(),
-            this.txtChasis.getText(),          
-            this.txtTransmision.getText(),
-            this.txtKilometraje.getText(),
-            this.txtEstado.getText(),
-            this.txtValor.getText(),
-            this.txtAnotaciones.getText().trim());
-                
-        
+        clsAutos myAutos = new clsAutos(
+                0,
+                this.txtCodigo.getText().trim(),
+                this.txtMarca.getText().trim(),
+                this.txtModelo.getText().trim(),
+                this.txtAno.getText().trim(),
+                this.comboxTipoEstilo.getSelectedItem().toString(),
+                this.txtMotor.getText().trim(),
+                this.txtCilidrada.getText().trim(),
+                this.txtCombustible.getText().trim(),
+                Integer.parseInt(this.txtPasajeros.getValue().toString()),
+                this.txtChasis.getText().trim(),
+                this.txtTransmision.getText().trim(),
+                this.txtKilometraje.getText().trim(),
+                this.txtEstado.getText().trim(),
+                Integer.parseInt(this.txtValor.getValue().toString()),
+                this.txtAnotaciones.getText().trim()             
+        );
         boolean operacion = myGestor.GuardarAutos(myAutos);
-
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.LimpiarFormulario();
@@ -652,7 +650,5 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField txtTransmision;
     private javax.swing.JFormattedTextField txtValor;
     // End of variables declaration//GEN-END:variables
-
-   
 
 }
