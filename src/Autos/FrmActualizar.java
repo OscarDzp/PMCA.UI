@@ -685,8 +685,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtMarca.setText(myAuto.getMarca());
                 this.txtModelo.setText(myAuto.getModelo());
                 this.txtModelo.setText(myAuto.getModelo() + "");
-                this.txtAno.setText(myAuto.getAño() + "");
-                this.txtAno.setValue(myAuto.getAño());
+                this.txtAno.setText(myAuto.getAno() + "");
+                this.txtAno.setValue(myAuto.getAno());
                 this.txtPasajeros.setValue(myAuto.getPasajeros());
                 this.txtPasajeros.setValue(myAuto.getPasajeros() + "");
                 this.txtTransmision.setText(myAuto.getTransmision());

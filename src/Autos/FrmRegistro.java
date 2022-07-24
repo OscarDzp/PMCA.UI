@@ -552,13 +552,15 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         }
 
         intzGestor myGestor = new clsGestor();
-
+       
+  
         clsAutos myAutos = new clsAutos(
-                0,
+                0,       
+                
                 this.txtCodigo.getText().trim(),
                 this.txtMarca.getText().trim(),
                 this.txtModelo.getText().trim(),
-                this.txtAno.getText().trim(),
+                Integer.parseInt(this.txtAno.getText().trim()),
                 this.comboxTipoEstilo.getSelectedItem().toString(),
                 this.txtMotor.getText().trim(),
                 this.txtCilidrada.getText().trim(),
@@ -569,7 +571,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 this.txtKilometraje.getText().trim(),
                 this.txtEstado.getText().trim(),
                 Integer.parseInt(this.txtValor.getValue().toString()),
-                this.txtAnotaciones.getText().trim()             
+                this.txtAnotaciones.getText().trim()            
         );
         boolean operacion = myGestor.GuardarAutos(myAutos);
         if (operacion) {
@@ -650,5 +652,4 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField txtTransmision;
     private javax.swing.JFormattedTextField txtValor;
     // End of variables declaration//GEN-END:variables
-
 }
