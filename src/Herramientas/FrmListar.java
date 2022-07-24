@@ -1,3 +1,4 @@
+
 package Herramientas;
 
 import Clases.clsActivo;
@@ -7,90 +8,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author oscar
  */
-public class frmListar extends javax.swing.JInternalFrame {
-
-    private clsGestor myGestor;
+public class FrmListar extends javax.swing.JInternalFrame {
+    
+ private clsGestor myGestor;
  
-
+      
     /**
-     * Creates new form frmListar
+     * Creates new form Frm
      */
-    public frmListar() {
-        this.myGestor = new clsGestor();
+    public FrmListar() {
+         this.myGestor = new clsGestor();
         initComponents();
-        this.CargarTabla();
-    }
-
-    private void CargarTabla() {
-        ArrayList<clsActivo> activos = this.myGestor.ListarActivos();
-        String[] columnas = new String[]{
-            "Activo",
-            "Nombre",
-            "Código",
-            "Tipo",
-            "Fragilidad",
-            "Descripción",
-            "Estado",
-            "Cantidad"
-        };
-
-        DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
-        for (clsActivo activo : activos) {
-            obModelo.addRow(new Object[]{
-                activo.getIdActivo(),
-                activo.getCodigo(),
-                activo.getNombre(),
-                activo.getTipo(),
-                activo.getFragilidad(),
-                activo.getDescripcion(),
-                activo.getCantidad(),
-                this.ObtenerEstado(activo.isEstado())
-            });
-            this.tActivos.setModel(obModelo);
-        }
-    }
-
-    private void CargarTabla(ArrayList<clsActivo> activos) {
-
-        String[] columnas = new String[]{
-            "Activo",
-            "Nombre",
-            "Código",
-            "Tipo",
-            "Fragilidad",
-            "Descripción",
-            "Cantidad",
-            "Estado"
-        };
-
-        DefaultTableModel obModel = new DefaultTableModel(columnas, 0);
-        for (clsActivo activo : activos) {
-            obModel.addRow(new Object[]{
-                activo.getIdActivo(),
-                activo.getCodigo(),
-                activo.getNombre(),
-                activo.getTipo(),
-                activo.getFragilidad(),
-                activo.getDescripcion(),
-                activo.getCantidad(),
-                this.ObtenerEstado(activo.isEstado())
-            });
-        }
-        this.tActivos.setModel(obModel);
-
-    }
-
-    private String ObtenerEstado(boolean estado) {
-        if (estado) {
-            return "Activo";
-        } else {
-            return "Inactivo";
-        }
+          this.CargarTabla();
     }
 
     /**
@@ -102,18 +35,18 @@ public class frmListar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.JPanel panelListar = new javax.swing.JPanel();
-        javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
-        javax.swing.JTable tActivos = new javax.swing.JTable();
-        javax.swing.JLabel lbInformacionFiltrar = new javax.swing.JLabel();
-        javax.swing.JTextField txtBuscar = new javax.swing.JTextField();
-        javax.swing.JLabel lbBuscar = new javax.swing.JLabel();
-        javax.swing.JButton btnBuscar = new javax.swing.JButton();
-        javax.swing.JButton btnLimpiarBuscador = new javax.swing.JButton();
+        panelListar = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tActivos = new javax.swing.JTable();
+        lbInformacionFiltrar = new javax.swing.JLabel();
+        txtBuscar = new javax.swing.JTextField();
+        lbBuscar = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JButton();
+        btnLimpiarBuscador = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Lista de activos registrados");
+        setTitle("Lista de herramientas registrados");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/list-view-16.0.png"))); // NOI18N
 
         tActivos.setModel(new javax.swing.table.DefaultTableModel(
@@ -193,7 +126,7 @@ public class frmListar extends javax.swing.JInternalFrame {
                     .addGroup(panelListarLayout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addComponent(lbInformacionFiltrar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(361, Short.MAX_VALUE))
         );
         panelListarLayout.setVerticalGroup(
             panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,8 +141,8 @@ public class frmListar extends javax.swing.JInternalFrame {
                 .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLimpiarBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -238,6 +171,7 @@ public class frmListar extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         this.Buscar();
         this.txtBuscar.requestFocus();
+
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
@@ -251,15 +185,75 @@ public class frmListar extends javax.swing.JInternalFrame {
         this.txtBuscar.requestFocus();
         this.CargarTabla();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
+ 
+    private void CargarTabla() {
+        ArrayList<clsActivo> activos = this.myGestor.ListarActivos();
+        String[] columnas = new String[]{
+            "Activo",
+            "Nombre",
+            "Código",
+            "Tipo",
+            "Fragilidad",
+            "Descripción",
+            "Estado",
+            "Cantidad"
+        };
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {
-        
-        this.txtBuscar.setText("");
-        this.txtBuscar.requestFocus();
-        this.CargarTabla();
+        DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
+        for (clsActivo activo : activos) {
+            obModelo.addRow(new Object[]{
+                activo.getIdActivo(),
+                activo.getCodigo(),
+                activo.getNombre(),
+                activo.getTipo(),
+                activo.getFragilidad(),
+                activo.getDescripcion(),
+                activo.getCantidad(),
+                this.ObtenerEstado(activo.isEstado())
+            });
+            this.tActivos.setModel(obModelo);
+        }
+    }
+    
+    
+    private void CargarTabla(ArrayList<clsActivo> activos) {
+
+        String[] columnas = new String[]{
+            "Activo",
+            "Nombre",
+            "Código",
+            "Tipo",
+            "Fragilidad",
+            "Descripción",
+            "Cantidad",
+            "Estado"
+        };
+
+        DefaultTableModel obModel = new DefaultTableModel(columnas, 0);
+        for (clsActivo activo : activos) {
+            obModel.addRow(new Object[]{
+                activo.getIdActivo(),
+                activo.getCodigo(),
+                activo.getNombre(),
+                activo.getTipo(),
+                activo.getFragilidad(),
+                activo.getDescripcion(),
+                activo.getCantidad(),
+                this.ObtenerEstado(activo.isEstado())
+            });
+        }
+        this.tActivos.setModel(obModel);
+    }
+    
+        private String ObtenerEstado(boolean estado) {
+        if (estado) {
+            return "Activo";
+        } else {
+            return "Inactivo";
+        }
     }
 
-    private void Buscar() {
+       private void Buscar() {
 
         String valor = this.txtBuscar.getText().trim().toLowerCase();
 
@@ -283,7 +277,17 @@ public class frmListar extends javax.swing.JInternalFrame {
         }
     }
     
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    // End of variables declaration//GEN-END:variables
+    
+    
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnLimpiarBuscador;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbBuscar;
+    private javax.swing.JLabel lbInformacionFiltrar;
+    private javax.swing.JPanel panelListar;
+    private javax.swing.JTable tActivos;
+    private javax.swing.JTextField txtBuscar;
+    // End of variables declaration//GEN-END:variables
 }

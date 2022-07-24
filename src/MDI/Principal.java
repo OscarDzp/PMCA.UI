@@ -214,7 +214,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarActivoMenuActionPerformed
 
     private void listadoActivoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActivoMenuActionPerformed
-        Herramientas.frmListar myForm = new Herramientas.frmListar();
+        Herramientas.FrmListar myForm = new Herramientas.FrmListar ();
         this.menuPrincipal.add(myForm);
         myForm.setLocation(
                 (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
