@@ -61,7 +61,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -110,7 +110,6 @@ public class FrmListar extends javax.swing.JInternalFrame {
         panelListar.setLayout(panelListarLayout);
         panelListarLayout.setHorizontalGroup(
             panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
             .addGroup(panelListarLayout.createSequentialGroup()
                 .addGap(262, 262, 262)
                 .addGroup(panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +125,8 @@ public class FrmListar extends javax.swing.JInternalFrame {
                     .addGroup(panelListarLayout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addComponent(lbInformacionFiltrar)))
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addContainerGap(352, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         panelListarLayout.setVerticalGroup(
             panelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,7 +142,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
                     .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLimpiarBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
