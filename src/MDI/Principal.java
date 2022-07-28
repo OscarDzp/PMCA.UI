@@ -34,6 +34,15 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenu6 = new javax.swing.JMenu();
         menuPrincipal = new javax.swing.JDesktopPane(){
             @Override
             protected void paintComponent(Graphics g)
@@ -56,9 +65,31 @@ public class Principal extends javax.swing.JFrame {
         jRegistroEmpleado = new javax.swing.JCheckBoxMenuItem();
         jActualizarEmpleado = new javax.swing.JCheckBoxMenuItem();
         jListarEmpleado = new javax.swing.JCheckBoxMenuItem();
+        jSoporte = new javax.swing.JMenu();
+        jAyuda = new javax.swing.JCheckBoxMenuItem();
+
+        jMenu2.setText("File");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Edit");
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("File");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        jMenu6.setText("jMenu6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("MCA-Modulo de Control de Activvos");
+        setTitle("Rapidos y Facil, Control de Vehiculos");
 
         sistemaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/desktop-16.png"))); // NOI18N
         sistemaMenu.setMnemonic('f');
@@ -182,20 +213,35 @@ public class Principal extends javax.swing.JFrame {
 
         menuBar.add(jMenu1);
 
+        jSoporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/customer-service.png"))); // NOI18N
+        jSoporte.setText("Soporte");
+
+        jAyuda.setSelected(true);
+        jAyuda.setText("Ayuda y Soporte técnico");
+        jAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/technical-support.png"))); // NOI18N
+        jAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAyudaActionPerformed(evt);
+            }
+        });
+        jSoporte.add(jAyuda);
+
+        menuBar.add(jSoporte);
+
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(menuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1160, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(menuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 863, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(416, 310));
+        setSize(new java.awt.Dimension(1176, 894));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -292,6 +338,17 @@ public class Principal extends javax.swing.JFrame {
         );
     myForm.show();     }//GEN-LAST:event_jListarEmpleadoActionPerformed
 
+    private void jAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAyudaActionPerformed
+     Soporte.FrmSoporte myForm = new Soporte.FrmSoporte();
+        this.menuPrincipal.add(myForm);
+        myForm.setLocation(
+                (menuPrincipal.getSize().width - myForm.getSize().width) / 2,
+                (menuPrincipal.getSize().height - myForm.getSize().height) / 2
+      );
+    myForm.show();                                                   
+
+    }//GEN-LAST:event_jAyudaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,9 +375,20 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem actualizarVehiculo;
     private javax.swing.JMenu autosMenu;
     private javax.swing.JCheckBoxMenuItem jActualizarEmpleado;
+    private javax.swing.JCheckBoxMenuItem jAyuda;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jListarEmpleado;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JCheckBoxMenuItem jRegistroEmpleado;
+    private javax.swing.JMenu jSoporte;
     private javax.swing.JMenuItem listadoActivoMenu;
     private javax.swing.JCheckBoxMenuItem listarVehiculo;
     private javax.swing.JMenuBar menuBar;

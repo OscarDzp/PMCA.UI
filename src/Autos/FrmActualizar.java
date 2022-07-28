@@ -680,7 +680,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
             if (myAuto != null && myAuto.getIdAutos() > 0) {
                 this.btActualizar.setEnabled(true);
-
                 this.idAuto = myAuto.getIdAutos();
                 this.txtMarca.setText(myAuto.getMarca());
                 this.txtModelo.setText(myAuto.getModelo());
@@ -702,9 +701,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtChasis.setText(myAuto.getChasis() + "");
                 this.txtKilometraje.setText(myAuto.getKilometraje() + "");
                 this.txtKilometraje.setText(myAuto.getKilometraje());
-                this.txtEstado.setText(myAuto.getEstado());
-            // creacion de otras carpteas.    this.comboxTipo.setSelectedItem(myAuto.);
-             // creacion de otras carpteas.      this.txtAnotaciones.setText(myAuto.getAnotaciones);
+                this.comboxTipoEstilo.setSelectedItem(myAuto.getEstilo());
+                this.txtAnotaciones.setText(myAuto.getAnotaciones());
             } else {
                 JOptionPane.showMessageDialog(this, "NO se ha encontrado el Vehiculo.", "Aviso", JOptionPane.WARNING_MESSAGE);
                 this.btActualizar.setEnabled(false);

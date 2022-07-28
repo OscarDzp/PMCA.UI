@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -15,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 public class FrmListar extends javax.swing.JInternalFrame {
 
     private clsGestor myGestor;
+    private Object obModelo;
 
     /**
      * Creates new form FrmListar
@@ -43,7 +45,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         lbBuscar = new javax.swing.JLabel();
         lbInformacionFiltrar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        DefaultTableModel = new javax.swing.JTable();
+        tListarAutos = new javax.swing.JTable();
 
         setClosable(true);
         setIconifiable(true);
@@ -87,7 +89,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbInformacionFiltrar.setText("Ingrese el código del Auto.");
 
-        DefaultTableModel.setModel(new javax.swing.table.DefaultTableModel(
+        tListarAutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -106,7 +108,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(DefaultTableModel);
+        jScrollPane1.setViewportView(tListarAutos);
 
         javax.swing.GroupLayout jActualizarCarroLayout = new javax.swing.GroupLayout(jActualizarCarro);
         jActualizarCarro.setLayout(jActualizarCarroLayout);
@@ -241,7 +243,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
                 auto.getAnotaciones(),
                 this.ObtenerEstado(auto.isEstado())
             });
-            this.tAutos.setModel(obModelo);
+            this.tListarAutos.setModel(obModelo);
         }
     }
 
@@ -285,7 +287,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
                 this.ObtenerEstado(auto.isEstado())
             });
         }
-        this.tAutos.setModel(obModelo);
+        this.tListarAutos.setModel((TableModel) obModelo);
     }
 
     private void Buscar() {
@@ -296,31 +298,32 @@ public class FrmListar extends javax.swing.JInternalFrame {
 
             if (autos != null && !autos.isEmpty()) {
                 List<clsAuto> finales = autos.stream()
-                        .filter(emp -> (emp.getIdAutos() + "").contains(valor)
-                        || emp.getAno().trim().toLowerCase().contains(valor)
-                        || emp.getAnotaciones().trim().toLowerCase().contains(valor)
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
-                        || emp.
+                        .filter(auto -> (auto.getIdAutos() + "").contains(valor)
+                        || auto.getAno().trim().toLowerCase().contains(valor)
+                        || auto.getAnotaciones().trim().toLowerCase().contains(valor)
+                        || auto.getCodigo().trim().toLowerCase().contains(valor)
+                        || auto.getEstilo().trim().toLowerCase().contains(valor)
+                        || auto.getMarca().trim().toLowerCase().contains(valor)
+                        || auto.getMotor().trim().toLowerCase().contains(valor)
+                        || auto.getModelo().trim().toLowerCase().contains(valor)
+                        || auto.getCilindrada().trim().toLowerCase().contains(valor)
+                        || auto.getCombustible().trim().toLowerCase().contains(valor)
+                        || auto.getPasajeros().trim().toLowerCase().contains(valor)
+                        || auto.getChasis().trim().toLowerCase().contains(valor)
+                        || auto.getTransmision().trim().toLowerCase().contains(valor)
+                        || auto.getKilometraje().trim().toLowerCase().contains(valor)
+                        || auto.getValor().trim().toLowerCase().contains(valor)
+                        || auto.getEstado().trim().toLowerCase().contains(valor)
                                 ).collect(collectors.toList());
                                 this.CargarTabla((ArrayList<clsAutos>) finales);
             }
+        }else {
+        this.CargarTabla();
         }
 
     }
     ;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable DefaultTableModel;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnLimpiarBuscador;
     private javax.swing.JPanel jActualizarCarro;
@@ -328,6 +331,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbBuscar;
     private javax.swing.JLabel lbInformacionFiltrar;
+    private javax.swing.JTable tListarAutos;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

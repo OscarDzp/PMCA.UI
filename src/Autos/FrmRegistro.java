@@ -555,8 +555,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
        
   
         clsAutos myAutos = new clsAutos(
-                0,       
-                
+                0,                    
                 this.txtCodigo.getText().trim(),
                 this.txtMarca.getText().trim(),
                 this.txtModelo.getText().trim(),

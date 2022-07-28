@@ -416,15 +416,16 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             estado = false;
         }
         clsActivo myActivo = new clsActivo(
-                   this.idActivo,
+                this.idActivo,
                 this.txtCodigo.getText().trim(),
                 this.comboxTipo.getSelectedItem().toString(),
-                 this.comboxFragilidad.getSelectedItem().toString(),
+                this.comboxFragilidad.getSelectedItem().toString(),
                 this.txtNombre.getText().trim(),
                 this.txtareaDescripcion.getText().trim(),
                 estado,
                 Integer.parseInt(this.txtCantidad.getValue().toString()),
-                this.comboxFragilidad.getSelectedItem().toString());
+                this.comboxFragilidad.getSelectedItem().toString()
+        );
         boolean operacion = myGestor.ActualizarActivo(myActivo);
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
