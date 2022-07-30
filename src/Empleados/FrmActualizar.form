@@ -4,6 +4,11 @@
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
     <Property name="iconifiable" type="boolean" value="true"/>
+    <Property name="resizable" type="boolean" value="true"/>
+    <Property name="title" type="java.lang.String" value="Actualizaci&#xf3;n de empleados."/>
+    <Property name="frameIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+      <Image iconType="3" name="/Recursos/Iconos/update-16.png"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,13 +28,407 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="394" max="32767" attributes="0"/>
+          <Component id="panelActualizar" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="274" max="32767" attributes="0"/>
+          <Component id="panelActualizar" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="panelActualizar">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                              <Component id="lbBuscar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtBuscar" min="-2" pref="329" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="IbCodigo" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="txtCodigoEmpleado" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="IbPrimerApellido" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtPrimerApellido" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="IbIdentificacion" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="txtIdentificacion" min="-2" pref="242" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                      <Component id="IbPuesto" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="IbCorreo" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="IbDireccion" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="IbDepartamento" min="-2" pref="85" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="txtCorreo" max="32767" attributes="0"/>
+                                                  <Component id="txtPuesto" max="32767" attributes="0"/>
+                                                  <Component id="txtDepartamento" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
+                                      <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lbTipoIdentificacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="IbNombre" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                                          <Component id="IbSegundoApellido" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="IbTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbEstado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="chkActivo" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                              <Component id="chkInactivo" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="cbxTipoDeIdentificacion" pref="233" max="32767" attributes="0"/>
+                                              <Component id="txtNombre" max="32767" attributes="0"/>
+                                              <Component id="txtSegundoApellido" max="32767" attributes="0"/>
+                                              <Component id="txtTelefono" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnLimpiarBuscador" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane1" alignment="1" min="-2" pref="766" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="btActualizar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btLimpiar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
+                          <Component id="lbInformacionFiltrar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="lbInformacionFiltrar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnLimpiarBuscador" pref="30" max="32767" attributes="0"/>
+                      <Component id="btnBuscar" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtCodigoEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbTipoIdentificacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbxTipoDeIdentificacion" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="IbCodigo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="IbIdentificacion" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="txtIdentificacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="IbNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombre" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="IbPrimerApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPrimerApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="IbSegundoApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSegundoApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="IbCorreo" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtCorreo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="IbTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="IbPuesto" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtPuesto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkActivo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkInactivo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="IbDepartamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDepartamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="IbDireccion" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="148" max="-2" attributes="0"/>
+                  <EmptySpace pref="41" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btLimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lbInformacionFiltrar">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ingrese el c&#xf3;digo de empleado"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtBuscar">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBuscarActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBuscarKeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbBuscar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Buscar:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnBuscar">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Recursos/Iconos/icons8-search-16.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Buscar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btnBuscarKeyPressed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnLimpiarBuscador">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Recursos/Iconos/clean-16.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Limpiar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarBuscadorActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbCodigo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCodigoEmpleado">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoEmpleadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbIdentificacion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Identificaci&#xf3;n:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtIdentificacion">
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbPrimerApellido">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Primer apellido:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPrimerApellido">
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbCorreo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Correo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCorreo">
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbPuesto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Puesto"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPuesto">
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbDepartamento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Departamento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDepartamento">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbTipoIdentificacion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo de identificaci&#xf3;n:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbxTipoDeIdentificacion">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Seleccione el tipo de identificaci&#xf3;n"/>
+                <StringItem index="1" value="C&#xe9;dula f&#xed;sica"/>
+                <StringItem index="2" value="DIMEX"/>
+                <StringItem index="3" value="DIDI"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxTipoDeIdentificacionActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbNombre">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNombre">
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbSegundoApellido">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Segundo apellido:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSegundoApellido">
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbTelefono">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tel&#xe9;fono:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="txtTelefono">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+              <Format format="####-####" subtype="-1" type="5"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbEstado">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Estado:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="chkActivo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Activo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkActivoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="chkInactivo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Inactivo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkInactivoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="IbDireccion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Direcci&#xf3;n:"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="txtDireccion">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="btActualizar">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Recursos/Iconos/save-16.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Actualizar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btActualizarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btLimpiar">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Recursos/Iconos/clean-16.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Limpiar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btLimpiarActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
 </Form>
