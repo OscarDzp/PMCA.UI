@@ -36,7 +36,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         txtMotor = new javax.swing.JTextField();
         lbCilindrada = new javax.swing.JLabel();
         txtAno = new javax.swing.JFormattedTextField();
-        txtChasis = new javax.swing.JFormattedTextField();
         lbDescripción = new javax.swing.JLabel();
         lbTipoRequerido = new javax.swing.JLabel();
         txtCilidrada = new javax.swing.JFormattedTextField();
@@ -48,17 +47,15 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         jlTitulo = new javax.swing.JLabel();
         lbCantidadRequerida5 = new javax.swing.JLabel();
         lbCantidadRequerida6 = new javax.swing.JLabel();
-        txtKilometraje = new javax.swing.JFormattedTextField();
         txtMarca = new javax.swing.JTextField();
         lbMarca1 = new javax.swing.JLabel();
         txtPasajeros = new javax.swing.JFormattedTextField();
-        txtCombustible = new javax.swing.JFormattedTextField();
         lbCantidadRequerida9 = new javax.swing.JLabel();
-        txtModelo = new javax.swing.JTextField();
         lbCódigo = new javax.swing.JLabel();
         lbTipo = new javax.swing.JLabel();
         lbCantidadRequerida7 = new javax.swing.JLabel();
         lbCantidadRequerida4 = new javax.swing.JLabel();
+        txtModelo = new javax.swing.JTextField();
         lbCantidadRequerida1 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         lbCantidadRequerida = new javax.swing.JLabel();
@@ -68,7 +65,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbCombustible = new javax.swing.JLabel();
         lbMarca = new javax.swing.JLabel();
         lbCantidad5 = new javax.swing.JLabel();
-        txtTransmision = new javax.swing.JFormattedTextField();
         lbCódigoRequerido3 = new javax.swing.JLabel();
         lbCantidadRequerida3 = new javax.swing.JLabel();
         lbCantidad6 = new javax.swing.JLabel();
@@ -78,7 +74,11 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         btLimpiar = new javax.swing.JButton();
         comboxTipoEstilo = new javax.swing.JComboBox<>();
         btGuardar = new javax.swing.JButton();
-        txtEstado = new javax.swing.JFormattedTextField();
+        txtEstado = new javax.swing.JTextField();
+        txtKilometraje = new javax.swing.JTextField();
+        txtCombustible = new javax.swing.JTextField();
+        txtChasis = new javax.swing.JTextField();
+        txtTransmision = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -102,8 +102,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbCilindrada.setText("Cilindrada:");
 
         txtAno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
-        txtChasis.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         lbDescripción.setText("Anotaciones del Vehiculo.");
 
@@ -132,13 +130,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbCantidadRequerida6.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida6.setText("*");
 
-        txtKilometraje.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        txtKilometraje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKilometrajeActionPerformed(evt);
-            }
-        });
-
         txtMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMarcaActionPerformed(evt);
@@ -149,21 +140,8 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         txtPasajeros.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        txtCombustible.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-        txtCombustible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCombustibleActionPerformed(evt);
-            }
-        });
-
         lbCantidadRequerida9.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida9.setText("*");
-
-        txtModelo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtModeloActionPerformed(evt);
-            }
-        });
 
         lbCódigo.setText("Código:");
 
@@ -174,6 +152,12 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         lbCantidadRequerida4.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida4.setText("*");
+
+        txtModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtModeloActionPerformed(evt);
+            }
+        });
 
         lbCantidadRequerida1.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida1.setText("*");
@@ -201,8 +185,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbMarca.setText("Marca:");
 
         lbCantidad5.setText("Estado:");
-
-        txtTransmision.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         lbCódigoRequerido3.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido3.setText("*");
@@ -236,7 +218,35 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             }
         });
 
-        txtEstado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        txtEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEstadoActionPerformed(evt);
+            }
+        });
+
+        txtKilometraje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtKilometrajeActionPerformed(evt);
+            }
+        });
+
+        txtCombustible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCombustibleActionPerformed(evt);
+            }
+        });
+
+        txtChasis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtChasisActionPerformed(evt);
+            }
+        });
+
+        txtTransmision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTransmisionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -244,113 +254,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addGap(364, 364, 364)
-                                    .addComponent(jlTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbCantidad3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lbCantidadRequerida5, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbCantidad6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lbCantidadRequerida8, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbCantidad1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lbCantidadRequerida3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtValor, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
-                                            .addComponent(txtTransmision)
-                                            .addComponent(txtPasajeros)))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(lbMarca1)
-                                                        .addComponent(lbCantidad))
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(lbCantidadRequerida, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(lbCódigoRequerido2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(lbMarca)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(lbCódigoRequerido1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(lbCódigo)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(lbCódigoRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGap(26, 26, 26)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(txtModelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
-                                                .addComponent(txtMarca, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(txtAno)))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                            .addComponent(lbDescripción)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lbCantidadRequerida9, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(lbTipo)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lbTipoRequerido)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(comboxTipoEstilo, 0, 262, Short.MAX_VALUE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbCilindrada)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(lbCantidadRequerida1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbMotor)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lbCódigoRequerido3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbCombustible)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lbCantidadRequerida2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbCantidad2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lbCantidadRequerida4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtChasis)
-                                            .addComponent(txtMotor)
-                                            .addComponent(txtCilidrada)
-                                            .addComponent(txtCombustible, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbCantidad4)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lbCantidadRequerida6, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(lbCantidad5)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lbCantidadRequerida7, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(37, 37, 37)))
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-                                            .addComponent(txtKilometraje))))))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 23, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -360,6 +263,113 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btLimpiar)))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(364, 364, 364)
+                        .addComponent(jlTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lbCantidad3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbCantidadRequerida5, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lbCantidad6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbCantidadRequerida8, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lbCantidad1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbCantidadRequerida3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtValor, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                            .addComponent(txtPasajeros)
+                            .addComponent(txtTransmision)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lbMarca1)
+                                        .addComponent(lbCantidad))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lbCantidadRequerida, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lbCódigoRequerido2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(lbMarca)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lbCódigoRequerido1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(lbCódigo)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lbCódigoRequerido, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(26, 26, 26)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtModelo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                                .addComponent(txtMarca, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtAno)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(lbDescripción)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lbCantidadRequerida9, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lbTipo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbTipoRequerido)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboxTipoEstilo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(lbCilindrada)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(lbCantidadRequerida1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(lbMotor)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(lbCódigoRequerido3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(lbCombustible)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(lbCantidadRequerida2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addComponent(lbCantidad2)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(lbCantidadRequerida4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtMotor, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                                        .addComponent(txtCilidrada)
+                                        .addComponent(txtCombustible)
+                                        .addComponent(txtChasis)))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(lbCantidad5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lbCantidadRequerida7, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(lbCantidad4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbCantidadRequerida6, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtKilometraje, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -418,18 +428,18 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCantidad3)
                     .addComponent(lbCantidadRequerida5)
-                    .addComponent(txtTransmision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbCantidad4)
                     .addComponent(lbCantidadRequerida6)
-                    .addComponent(txtKilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtKilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTransmision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCantidad5)
                     .addComponent(lbCantidadRequerida7)
-                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbCantidad6)
                     .addComponent(lbCantidadRequerida8)
-                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbDescripción)
@@ -464,10 +474,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
     private void txtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMarcaActionPerformed
-
-    private void txtCombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCombustibleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCombustibleActionPerformed
 
     private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
         // TODO add your handling code here:
@@ -517,9 +523,9 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             this.txtAno.requestFocus();
             return;
         }
-        if (this.txtCombustible.getText().trim().equals("")) {
+        if (this.txtEstado.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "Introduzca el tipo de combustibles.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            this.txtCombustible.requestFocus();
+            this.txtEstado.requestFocus();
             return;
         }
         if (this.txtPasajeros.getText().trim().equals("")) {
@@ -569,7 +575,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 this.comboxTipoEstilo.getSelectedItem().toString(),
                 this.txtMotor.getText().trim(),
                 this.txtCilidrada.getText().trim(),
-                this.txtCombustible.getText().trim(),
+                this.txtEstado.getText().trim(),
                 Integer.parseInt(this.txtPasajeros.getValue().toString()),
                 this.txtChasis.getText().trim(),
                 this.txtTransmision.getText().trim(),
@@ -588,9 +594,25 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btGuardarActionPerformed
 
+    private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEstadoActionPerformed
+
     private void txtKilometrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKilometrajeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKilometrajeActionPerformed
+
+    private void txtCombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCombustibleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCombustibleActionPerformed
+
+    private void txtChasisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtChasisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtChasisActionPerformed
+
+    private void txtTransmisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTransmisionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTransmisionActionPerformed
     private void LimpiarFormulario() {
         this.txtCodigo.setText("");
         this.txtMarca.setText("");
@@ -598,10 +620,11 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         this.txtAno.setText("");
         this.txtPasajeros.setText("");
         this.txtTransmision.setText("");
+        this.txtCombustible.setText("");
         this.txtValor.setText("");
         this.txtMotor.setText("");
         this.txtCilidrada.setText("");
-        this.txtCombustible.setText("");
+        this.txtEstado.setText("");
         this.txtChasis.setText("");
         this.txtKilometraje.setText("");
         this.txtEstado.setText("");
@@ -648,17 +671,17 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lbTipoRequerido;
     private javax.swing.JFormattedTextField txtAno;
     private javax.swing.JTextArea txtAnotaciones;
-    private javax.swing.JFormattedTextField txtChasis;
+    private javax.swing.JTextField txtChasis;
     private javax.swing.JFormattedTextField txtCilidrada;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JFormattedTextField txtCombustible;
-    private javax.swing.JFormattedTextField txtEstado;
-    private javax.swing.JFormattedTextField txtKilometraje;
+    private javax.swing.JTextField txtCombustible;
+    private javax.swing.JTextField txtEstado;
+    private javax.swing.JTextField txtKilometraje;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtModelo;
     private javax.swing.JTextField txtMotor;
     private javax.swing.JFormattedTextField txtPasajeros;
-    private javax.swing.JFormattedTextField txtTransmision;
+    private javax.swing.JTextField txtTransmision;
     private javax.swing.JFormattedTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }

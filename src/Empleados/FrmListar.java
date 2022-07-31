@@ -171,8 +171,8 @@ public class FrmListar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtBuscarKeyPressed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        this.Buscar();
         this.txtBuscar.requestFocus();
+        this.Buscar();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
@@ -185,14 +185,12 @@ public class FrmListar extends javax.swing.JInternalFrame {
         this.txtBuscar.setText("");
         this.txtBuscar.requestFocus();
         this.CargarTabla();
-
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
     private void CargarTabla() {
         ArrayList<clsEmpleado> empleados = this.myGestor.ListarEmpleado();
-
         String[] columnas = new String[]{
             "Código",
-            "TipoId",
+            "Tipo Id",
             "Identificación",
             "Nombre",
             "1° Apellido",
@@ -203,12 +201,11 @@ public class FrmListar extends javax.swing.JInternalFrame {
             "Teléfono",
             "Departamento",
             "Estado"
-
-        };
+        };      
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
         for (clsEmpleado empleado : empleados) {
             obModelo.addRow(new Object[]{
-                empleado.getIdEmpleado(),
+                empleado.getIdEmpleado() +"",
                 empleado.getCodigo(),
                 empleado.getTipoIdentificacion(),
                 empleado.getIdentificacion(),
@@ -222,10 +219,8 @@ public class FrmListar extends javax.swing.JInternalFrame {
                 empleado.getDepartamento(),
                 this.ObtenerEstado(empleado.isEstado())
             });
+             this.tblListarEmpleado.setModel(obModelo);
         }
-
-        this.tblListarEmpleado.setModel(obModelo);
-
     }
 
     private void CargarTabla(ArrayList<clsEmpleado> empleados) {
@@ -246,7 +241,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
         for (clsEmpleado empleado : empleados) {
             obModelo.addRow(new Object[]{
-                empleado.getIdEmpleado(),
+                empleado.getIdEmpleado() + "",
                 empleado.getCodigo(),
                 empleado.getTipoIdentificacion(),
                 empleado.getIdentificacion(),
@@ -271,20 +266,18 @@ public class FrmListar extends javax.swing.JInternalFrame {
             return "Inactivo";
         }
     }
-    
+
     private void Buscar() {
-        
-    
+
         String valor = this.txtBuscar.getText().trim().toLowerCase();
-        
+
         if (!valor.isEmpty() && !valor.isBlank()) {
-            
-        
+
             ArrayList<clsEmpleado> empleados = this.myGestor.ListarEmpleado();
-            
+
             if (empleados != null && !empleados.isEmpty()) {
                 List<clsEmpleado> finales = empleados.stream()
-                        .filter(empleado -> empleado.getCodigo().trim().toLowerCase().contains(valor)
+                        .filter(empleado -> (empleado.getIdEmpleado() + "").contains(valor)
                         || empleado.getCodigo().trim().toLowerCase().contains(valor)
                         || empleado.getTipoIdentificacion().trim().toLowerCase().contains(valor)
                         || empleado.getIdentificacion().trim().toLowerCase().contains(valor)
@@ -296,7 +289,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
                         || empleado.getCorreo().trim().toLowerCase().contains(valor)
                         || empleado.getTelefono().trim().toLowerCase().contains(valor)
                         || empleado.getDepartamento().trim().toLowerCase().contains(valor)
-                        || (empleado.getIdEmpleado() + "").trim().toLowerCase().contains(valor)
+                    //  || empleado.getestado().trim().toLowerCase().contains(valor)
                         ).collect(Collectors.toList());
 
                 this.CargarTabla((ArrayList<clsEmpleado>) finales);

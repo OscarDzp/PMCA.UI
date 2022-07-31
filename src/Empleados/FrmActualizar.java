@@ -11,7 +11,8 @@ import javax.swing.JOptionPane;
  * @author karii
  */
 public class FrmActualizar extends javax.swing.JInternalFrame {
-
+    
+ private Object btnActualizar;
     private clsGestor myGestor;
     private int idEmpleado;
 
@@ -458,7 +459,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             return;
         }
 
-        intzGestor myGestor = new clsGestor();
+         this.myGestor = new clsGestor();
 
         boolean estado;
         if (this.chkActivo.isSelected()) {
@@ -488,8 +489,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Se completó la actualización correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.LimpiarFormulario();
             this.txtCodigoEmpleado.requestFocus();
-            this.btActualizar.setEnabled(false);
-            this.idEmpleado = 0;
+            this.btActualizar.setEnabled(false);        
         } else {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamentepara actualizar.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -521,7 +521,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
         
         if (!codigo.isBlank() && !codigo.isEmpty()) {
-            clsEmpleado myEmpleado = this.myGestor.ConsultarEmpleado(idEmpleado);
+            clsEmpleado myEmpleado = this.myGestor.ConsultarEmpleado(Integer.valueOf(title));
             
             if (myEmpleado != null && myEmpleado.getIdEmpleado() > 0) {
                 this.btActualizar.setEnabled(true);
@@ -550,7 +550,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtBuscar.setText("");
                 this.LimpiarFormulario();
             }
-
         }
     }
     

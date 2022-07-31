@@ -402,9 +402,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         } else {
             estado = false;
         }
-        
- 
-        
      clsEmpleado myEmpleado = new clsEmpleado(
                 0,
                 this.txtCodigoEmpleado.getText(),
