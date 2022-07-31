@@ -112,6 +112,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         IbCodigo.setText("Código:");
 
+        txtCodigoEmpleado.setEditable(false);
         txtCodigoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoEmpleadoActionPerformed(evt);
@@ -173,6 +174,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         btActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/save-16.png"))); // NOI18N
         btActualizar.setText("Actualizar");
+        btActualizar.setEnabled(false);
         btActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btActualizarActionPerformed(evt);
@@ -540,6 +542,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                     this.txtDepartamento.setText(myEmpleado.getDepartamento());
                     this.txtDireccion.setText(myEmpleado.getDireccion());
                 }
+                this.btActualizar.setEnabled(true);
             } else {
                 JOptionPane.showMessageDialog(this, "El código ingresado no corresponde a ninguno de nuestros empleados.",
                         "Aviso", JOptionPane.WARNING_MESSAGE);
@@ -549,6 +552,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             }
 
         }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IbCodigo;
     private javax.swing.JLabel IbCorreo;

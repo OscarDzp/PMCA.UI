@@ -94,11 +94,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        btnBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnBuscarKeyPressed(evt);
-            }
-        });
 
         btnLimpiarBuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/clean-16.png"))); // NOI18N
         btnLimpiarBuscador.setText("Limpiar");
@@ -119,6 +114,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbCódigoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido.setText("*");
 
+        txtCodigo.setEditable(false);
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoActionPerformed(evt);
@@ -291,6 +287,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         btActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/save-16.png"))); // NOI18N
         btActualizar.setText("Actualizar");
+        btActualizar.setEnabled(false);
         btActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btActualizarActionPerformed(evt);
@@ -472,10 +469,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         this.txtBuscar.requestFocus();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
 
-    private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
-
-    }//GEN-LAST:event_btnBuscarKeyPressed
-
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         this.txtBuscar.requestFocus();
         this.Buscar();
@@ -501,6 +494,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                     this.chkInactivo.setSelected(true);
                 }
                 this.txtareaDescripcion.setText(myEmpleado.getDescripcion());
+                this.btActualizar.setEnabled(true);
             } else {
                 JOptionPane.showMessageDialog(this, "No se ha encontrado ningun activo con ese codigo..",
                         "Aviso", JOptionPane.WARNING_MESSAGE);

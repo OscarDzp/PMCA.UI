@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmRegistro extends javax.swing.JInternalFrame {
 
+    private Object idAuto;
+
     /**
      * Creates new form FrmRegistro
      */
@@ -131,6 +133,11 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbCantidadRequerida6.setText("*");
 
         txtKilometraje.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+        txtKilometraje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtKilometrajeActionPerformed(evt);
+            }
+        });
 
         txtMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -552,10 +559,9 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         }
 
         intzGestor myGestor = new clsGestor();
-       
-  
+        
         clsAutos myAutos = new clsAutos(
-                0,                    
+                0,
                 this.txtCodigo.getText().trim(),
                 this.txtMarca.getText().trim(),
                 this.txtModelo.getText().trim(),
@@ -581,6 +587,10 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btGuardarActionPerformed
+
+    private void txtKilometrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKilometrajeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtKilometrajeActionPerformed
     private void LimpiarFormulario() {
         this.txtCodigo.setText("");
         this.txtMarca.setText("");

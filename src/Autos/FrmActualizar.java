@@ -157,23 +157,13 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbTipoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbTipoRequerido.setText("*");
 
-        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoActionPerformed(evt);
-            }
-        });
+        txtCodigo.setEditable(false);
 
         lbCantidad3.setText("Transmision:");
 
         lbCilindrada.setText("Cilindrada:");
 
         lbCantidad6.setText("Valor:");
-
-        txtMotor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMotorActionPerformed(evt);
-            }
-        });
 
         lbMarca1.setText("Modelo:");
 
@@ -182,12 +172,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         txtCilidrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        txtModelo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtModeloActionPerformed(evt);
-            }
-        });
-
         lbMarca.setText("Marca:");
 
         comboxTipoEstilo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el tipo", "4x4", "4x2", "Compactos", "Crossover", "Coupé", "Deportivos", "Crossover", "Convertibles", "Hatchback", "MPV", "Pick-up", "Sedán", "Station Wagon", "SUV", "Utilitarios", " ", " " }));
@@ -195,12 +179,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbTipo.setText("Estilo de Auto:");
 
         lbCantidad1.setText("Pasajeros:");
-
-        txtMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMarcaActionPerformed(evt);
-            }
-        });
 
         txtKilometraje.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
@@ -217,6 +195,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         btActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/save-16.png"))); // NOI18N
         btActualizar.setText("Actualizar");
+        btActualizar.setEnabled(false);
         btActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btActualizarActionPerformed(evt);
@@ -544,22 +523,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtBuscarKeyPressed
 
-    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoActionPerformed
-
-    private void txtMotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMotorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMotorActionPerformed
-
-    private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModeloActionPerformed
-
-    private void txtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMarcaActionPerformed
-
     private void btActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActualizarActionPerformed
         if (this.txtCodigo.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
@@ -644,7 +607,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtCodigo.getText().trim(),
                 this.txtMarca.getText().trim(),
                 this.txtModelo.getText().trim(),
-                this.txtAno.getText().trim(),
+                Integer.parseInt(this.txtAno.getText().trim()),
                 this.comboxTipoEstilo.getSelectedItem().toString(),
                 this.txtMotor.getText().trim(),
                 this.txtCilidrada.getText().trim(),
@@ -703,6 +666,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtKilometraje.setText(myAuto.getKilometraje());
                 this.comboxTipoEstilo.setSelectedItem(myAuto.getEstilo());
                 this.txtAnotaciones.setText(myAuto.getAnotaciones());
+                this.btActualizar.setEnabled(true);
             } else {
                 JOptionPane.showMessageDialog(this, "NO se ha encontrado el Vehiculo.", "Aviso", JOptionPane.WARNING_MESSAGE);
                 this.btActualizar.setEnabled(false);

@@ -262,15 +262,16 @@ public class FrmListar extends javax.swing.JInternalFrame {
             });
             this.tblListarEmpleado.setModel(obModelo);
         }
-        
-        private String ObtenerEstado(boolean estado) {
+    }
+
+    private String ObtenerEstado(boolean estado) {
         if (estado) {
             return "Activo";
         } else {
             return "Inactivo";
         }
     }
-
+    
     private void Buscar() {
         
     
