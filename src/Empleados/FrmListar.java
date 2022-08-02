@@ -86,14 +86,14 @@ public class FrmListar extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Código", "Tipo ID", "Identificación", "Nombre", "1° Apellido", "2° Apellido", "Dirección", "Puesto", "Correo", "Teléfono", "Departamento", "Estado"
+                "ID Empleado", "Código", "Tipo ID", "Identificación", "Nombre", "1° Apellido", "2° Apellido", "Dirección", "Puesto", "Correo", "Teléfono", "Departamento", "Estado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -189,6 +189,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
     private void CargarTabla() {
         ArrayList<clsEmpleado> empleados = this.myGestor.ListarEmpleado();
         String[] columnas = new String[]{
+            "Id Empleado",
             "Código",
             "Tipo Id",
             "Identificación",
@@ -205,7 +206,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
         for (clsEmpleado empleado : empleados) {
             obModelo.addRow(new Object[]{
-                empleado.getIdEmpleado() +"",
+                empleado.getIdEmpleado(),
                 empleado.getCodigo(),
                 empleado.getTipoIdentificacion(),
                 empleado.getIdentificacion(),
@@ -225,8 +226,9 @@ public class FrmListar extends javax.swing.JInternalFrame {
 
     private void CargarTabla(ArrayList<clsEmpleado> empleados) {
         String[] columnas = new String[]{
+            "Id Empleado",
             "Código",
-            "TipoId",
+            "Tipo Id",
             "Identificación",
             "Nombre",
             "1° Apellido",
@@ -241,7 +243,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
         for (clsEmpleado empleado : empleados) {
             obModelo.addRow(new Object[]{
-                empleado.getIdEmpleado() + "",
+                empleado.getIdEmpleado(),
                 empleado.getCodigo(),
                 empleado.getTipoIdentificacion(),
                 empleado.getIdentificacion(),
@@ -288,8 +290,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
                         || empleado.getPuesto().trim().toLowerCase().contains(valor)
                         || empleado.getCorreo().trim().toLowerCase().contains(valor)
                         || empleado.getTelefono().trim().toLowerCase().contains(valor)
-                        || empleado.getDepartamento().trim().toLowerCase().contains(valor)
-                    //  || empleado.getestado().trim().toLowerCase().contains(valor)
+                        || empleado.getDepartamento().trim().toLowerCase().contains(valor)                
                         ).collect(Collectors.toList());
 
                 this.CargarTabla((ArrayList<clsEmpleado>) finales);

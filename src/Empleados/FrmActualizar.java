@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
  * @author karii
  */
 public class FrmActualizar extends javax.swing.JInternalFrame {
-    
- private Object btnActualizar;
+
+    private Object btnActualizar;
     private clsGestor myGestor;
     private int idEmpleado;
 
@@ -365,9 +365,9 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
-          if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.Buscar();
-          }
+        }
     }//GEN-LAST:event_btnBuscarKeyPressed
 
     private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
@@ -428,7 +428,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             this.txtIdentificacion.requestFocus();
             return;
         }
-        if (this.txtTelefono.getText().trim().equals("") || this.txtTelefono.getValue() == null) {
+        if (this.txtTelefono.getText().trim().equals("")|| this.txtTelefono.getValue() == null) {
             JOptionPane.showMessageDialog(this, "El teléfono es requerido.", "Aviso", JOptionPane.WARNING_MESSAGE);
             this.txtTelefono.requestFocus();
             return;
@@ -459,7 +459,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             return;
         }
 
-         this.myGestor = new clsGestor();
+        this.myGestor = new clsGestor();
 
         boolean estado;
         if (this.chkActivo.isSelected()) {
@@ -489,7 +489,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Se completó la actualización correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.LimpiarFormulario();
             this.txtCodigoEmpleado.requestFocus();
-            this.btActualizar.setEnabled(false);        
+            this.btActualizar.setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamentepara actualizar.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -519,10 +519,10 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btLimpiarActionPerformed
     private void Buscar() {
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
-        
+
         if (!codigo.isBlank() && !codigo.isEmpty()) {
-            clsEmpleado myEmpleado = this.myGestor.ConsultarEmpleado(Integer.valueOf(title));
-            
+            clsEmpleado myEmpleado = this.myGestor.ConsultarEmpleado(Integer.parseInt(this.txtBuscar.getText()));
+
             if (myEmpleado != null && myEmpleado.getIdEmpleado() > 0) {
                 this.btActualizar.setEnabled(true);
                 this.idEmpleado = myEmpleado.getIdEmpleado();
@@ -533,14 +533,14 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtPrimerApellido.setText(myEmpleado.getPrimerApellido());
                 this.txtSegundoApellido.setText(myEmpleado.getSegundoApellido());
                 this.txtCorreo.setText(myEmpleado.getCorreo());
-                this.txtTelefono.setText(myEmpleado.getTelefono());
+                this.txtTelefono.setValue(myEmpleado.getTelefono());
                 this.txtPuesto.setText(myEmpleado.getPuesto());
+                this.txtDepartamento.setText(myEmpleado.getDepartamento());
+                this.txtDireccion.setText(myEmpleado.getDireccion());
                 if (myEmpleado.isEstado()) {
                     chkActivo.setSelected(true);
                 } else {
                     chkInactivo.setSelected(true);
-                    this.txtDepartamento.setText(myEmpleado.getDepartamento());
-                    this.txtDireccion.setText(myEmpleado.getDireccion());
                 }
                 this.btActualizar.setEnabled(true);
             } else {
@@ -552,7 +552,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             }
         }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IbCodigo;
     private javax.swing.JLabel IbCorreo;

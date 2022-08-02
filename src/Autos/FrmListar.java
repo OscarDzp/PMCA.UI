@@ -90,17 +90,17 @@ public class FrmListar extends javax.swing.JInternalFrame {
 
         tListarAutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Estilo de Auto", "Marca", "Motor", "Modelo", "Cilindrada", "Año", "Combustible", "Pasajeros", "Chasis", "Transmision", "Kilometraje", "Valor", "Estado", "Anotaciones"
+                "Id Auto", "Código", "Estilo de Auto", "Marca", "Motor", "Modelo", "Cilindrada", "Año", "Combustible", "Pasajeros", "Chasis", "Transmision", "Kilometraje", "Valor", "Estado", "Anotaciones"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true, true, true, true, true, true, true, true, true, true
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -113,23 +113,24 @@ public class FrmListar extends javax.swing.JInternalFrame {
         jActualizarCarro.setLayout(jActualizarCarroLayout);
         jActualizarCarroLayout.setHorizontalGroup(
             jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jActualizarCarroLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbInformacionFiltrar)
+                .addGap(499, 499, 499))
             .addGroup(jActualizarCarroLayout.createSequentialGroup()
                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jActualizarCarroLayout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addComponent(btnBuscar)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnLimpiarBuscador))
-                    .addGroup(jActualizarCarroLayout.createSequentialGroup()
-                        .addGap(207, 207, 207)
+                        .addGap(382, 382, 382)
                         .addComponent(lbBuscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jActualizarCarroLayout.createSequentialGroup()
-                        .addGap(318, 318, 318)
-                        .addComponent(lbInformacionFiltrar)))
-                .addContainerGap(502, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(18, 18, 18)
+                        .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jActualizarCarroLayout.createSequentialGroup()
+                                .addComponent(btnBuscar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnLimpiarBuscador))
+                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jActualizarCarroLayout.setVerticalGroup(
             jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,11 +141,12 @@ public class FrmListar extends javax.swing.JInternalFrame {
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLimpiarBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -205,6 +207,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
     private void CargarTabla() {
         ArrayList<clsAutos> autos = this.myGestor.ListarAutos();
         String[] columnas = new String[]{
+            "Id Auto",
             "Código",
             "Estilo de Auto",
             "Marca",
@@ -224,12 +227,12 @@ public class FrmListar extends javax.swing.JInternalFrame {
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
         for (clsAutos auto : autos) {
             obModelo.addRow(new Object[]{
-                auto.getIdAutos() + "",
+               auto.getIdAutos() +"",
                 auto.getCodigo(),
                 auto.getEstilo(),
                 auto.getMarca(),
                 auto.getMotor(),
-                auto.getMotor(),
+                auto.getModelo(),
                 auto.getCilindrada(),
                 auto.getAno(),
                 auto.getCombustible(),
@@ -268,12 +271,12 @@ public class FrmListar extends javax.swing.JInternalFrame {
 
         for (clsAutos auto : autos) {
             obModelo.addRow(new Object[]{
-                auto.getIdAutos() + "",
+                auto.getIdAutos() +"",
                 auto.getCodigo(),
                 auto.getEstilo(),
                 auto.getMarca(),
                 auto.getMotor(),
-                auto.getMotor(),
+                auto.getModelo(),
                 auto.getCilindrada(),
                 auto.getAno(),
                 auto.getCombustible(),

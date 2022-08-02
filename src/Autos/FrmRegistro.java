@@ -523,7 +523,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             this.txtAno.requestFocus();
             return;
         }
-        if (this.txtEstado.getText().trim().equals("")) {
+        if (this.txtCombustible.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "Introduzca el tipo de combustibles.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.txtEstado.requestFocus();
             return;
@@ -575,14 +575,14 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                 this.comboxTipoEstilo.getSelectedItem().toString(),
                 this.txtMotor.getText().trim(),
                 this.txtCilidrada.getText().trim(),
-                this.txtEstado.getText().trim(),
+                 this.txtCombustible.getText().trim(),                
                 Integer.parseInt(this.txtPasajeros.getValue().toString()),
                 this.txtChasis.getText().trim(),
                 this.txtTransmision.getText().trim(),
                 this.txtKilometraje.getText().trim(),
                 this.txtEstado.getText().trim(),
                 Integer.parseInt(this.txtValor.getValue().toString()),
-                this.txtAnotaciones.getText().trim()            
+                this.txtAnotaciones.getText().trim()                  
         );
         boolean operacion = myGestor.GuardarAutos(myAutos);
         if (operacion) {
