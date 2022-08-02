@@ -639,7 +639,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
 
         if (!codigo.isBlank() && !codigo.isEmpty()) {
-            clsAutos myAuto = this.myGestor.ConsultarAutos(Integer.valueOf(title) );
+            clsAutos myAuto = this.myGestor.ConsultarAutos(Integer.parseInt(this.txtBuscar.getText()));
 
             if (myAuto != null && myAuto.getIdAutos() > 0) {
                 this.btActualizar.setEnabled(true);
