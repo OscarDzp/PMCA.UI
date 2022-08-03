@@ -643,27 +643,20 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
             if (myAuto != null && myAuto.getIdAutos() > 0) {
                 this.idAuto = myAuto.getIdAutos();
+               this.txtCodigo.setText(myAuto.getCodigo());
                 this.txtMarca.setText(myAuto.getMarca());
                 this.txtModelo.setText(myAuto.getModelo());
-                this.txtModelo.setText(myAuto.getModelo() + "");
-                this.txtAno.setText(myAuto.getAno() + "");
-                this.txtAno.setValue(myAuto.getAno());
+                this.txtAno.setValue(myAuto.getAno()); 
                 this.txtPasajeros.setValue(myAuto.getPasajeros());
-                this.txtPasajeros.setValue(myAuto.getPasajeros() + "");
                 this.txtTransmision.setText(myAuto.getTransmision());
-                this.txtTransmision.setText(myAuto.getTransmision() + "");
                 this.txtValor.setValue(myAuto.getValor());
-                this.txtValor.setText(myAuto.getValor() + "");
                 this.txtMotor.setText(myAuto.getMotor());
-                this.txtMotor.setText(myAuto.getMotor() + "");
                 this.txtCilidrada.setText(myAuto.getCilindrada());
-                this.txtCilidrada.setText(myAuto.getCilindrada() + "");
                 this.txtCombustible.setText(myAuto.getCombustible());
                 this.txtChasis.setText(myAuto.getChasis());
-                this.txtChasis.setText(myAuto.getChasis() + "");
-                this.txtKilometraje.setText(myAuto.getKilometraje() + "");
                 this.txtKilometraje.setText(myAuto.getKilometraje());
                 this.comboxTipoEstilo.setSelectedItem(myAuto.getEstilo());
+                this.txtEstado.setText(myAuto.getEstado());
                 this.txtAnotaciones.setText(myAuto.getAnotaciones());
                 this.btActualizar.setEnabled(true);
             } else {

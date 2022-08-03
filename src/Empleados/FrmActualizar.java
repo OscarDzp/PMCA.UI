@@ -77,11 +77,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbInformacionFiltrar.setText("Ingrese el código de empleado");
 
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
-            }
-        });
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyPressed(evt);
@@ -114,11 +109,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         IbCodigo.setText("Código:");
 
         txtCodigoEmpleado.setEditable(false);
-        txtCodigoEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoEmpleadoActionPerformed(evt);
-            }
-        });
 
         IbIdentificacion.setText("Identificación:");
 
@@ -133,11 +123,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbTipoIdentificacion.setText("Tipo de identificación:");
 
         cbxTipoDeIdentificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el tipo de identificación", "Cédula física", "DIMEX", "DIDI" }));
-        cbxTipoDeIdentificacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxTipoDeIdentificacionActionPerformed(evt);
-            }
-        });
 
         IbNombre.setText("Nombre:");
 
@@ -349,10 +334,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
-
-    }//GEN-LAST:event_txtBuscarActionPerformed
-
     private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.Buscar();
@@ -375,14 +356,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         this.txtBuscar.requestFocus();
         this.btActualizar.setEnabled(false);
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
-
-    private void txtCodigoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoEmpleadoActionPerformed
-
-    private void cbxTipoDeIdentificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoDeIdentificacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxTipoDeIdentificacionActionPerformed
 
     private void chkActivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkActivoActionPerformed
         if (this.chkInactivo.isSelected()) {

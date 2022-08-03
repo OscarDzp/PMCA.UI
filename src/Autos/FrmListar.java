@@ -14,7 +14,7 @@ import javax.swing.table.TableModel;
  * @author oscar
  */
 public class FrmListar extends javax.swing.JInternalFrame {
-
+    
     private clsGestor myGestor;
 
     /**
@@ -24,7 +24,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         this.myGestor = new clsGestor();
         initComponents();
         this.CargarTabla();
-
+        
     }
 
     /**
@@ -227,7 +227,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
         for (clsAutos auto : autos) {
             obModelo.addRow(new Object[]{
-               auto.getIdAutos() +"",
+                auto.getIdAutos() + "",
                 auto.getCodigo(),
                 auto.getEstilo(),
                 auto.getMarca(),
@@ -247,9 +247,10 @@ public class FrmListar extends javax.swing.JInternalFrame {
             this.tListarAutos.setModel(obModelo);
         }
     }
-
+    
     private void CargarTabla(ArrayList<clsAutos> autos) {
         String[] columnas = new String[]{
+            "Id Auto",
             "Código",
             "Estilo de Auto",
             "Marca",
@@ -266,12 +267,12 @@ public class FrmListar extends javax.swing.JInternalFrame {
             "Estado",
             "Anotaciones"
         };
-
+        
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
-
+        
         for (clsAutos auto : autos) {
             obModelo.addRow(new Object[]{
-                auto.getIdAutos() +"",
+                auto.getIdAutos() + "",
                 auto.getCodigo(),
                 auto.getEstilo(),
                 auto.getMarca(),
@@ -291,16 +292,16 @@ public class FrmListar extends javax.swing.JInternalFrame {
         }
         this.tListarAutos.setModel((TableModel) obModelo);
     }
-
+    
     private void Buscar() {
         String valor = this.txtBuscar.getText().trim().toLowerCase();
         if (!valor.isEmpty() && !valor.isBlank()) {
-
+            
             ArrayList<clsAutos> autos = this.myGestor.ListarAutos();
-
+            
             if (autos != null && !autos.isEmpty()) {
                 List<clsAutos> finales = autos.stream()
-                        .filter(auto -> (auto.getIdAutos() + "").contains(valor)
+                        .filter(auto -> auto.getCodigo().trim().toLowerCase().contains(valor)
                         || (auto.getAno() + "").trim().toLowerCase().contains(valor)
                         || auto.getAnotaciones().trim().toLowerCase().contains(valor)
                         || auto.getCodigo().trim().toLowerCase().contains(valor)
@@ -316,6 +317,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
                         || auto.getKilometraje().trim().toLowerCase().contains(valor)
                         || (auto.getValor() + "").trim().toLowerCase().contains(valor)
                         || auto.getEstado().trim().toLowerCase().contains(valor)
+                        || (auto.getIdAutos() + "").trim().toLowerCase().contains(valor)
                         ).collect(Collectors.toList());
                 this.CargarTabla((ArrayList<clsAutos>) finales);
             }

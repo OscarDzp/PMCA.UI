@@ -176,7 +176,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Karina Porras:"/>
+            <Property name="text" type="java.lang.String" value="Karina Porras: kariinPN0797@gmail.com"/>
           </Properties>
         </Component>
       </SubComponents>

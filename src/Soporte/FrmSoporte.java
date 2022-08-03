@@ -68,7 +68,7 @@ public class FrmSoporte extends javax.swing.JInternalFrame {
 
         jLabel10.setText("Oscar zumbado: ozumbado2000@gmail.com");
 
-        jLabel11.setText("Karina Porras:");
+        jLabel11.setText("Karina Porras: kariinPN0797@gmail.com");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

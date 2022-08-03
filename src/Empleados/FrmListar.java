@@ -279,7 +279,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
 
             if (empleados != null && !empleados.isEmpty()) {
                 List<clsEmpleado> finales = empleados.stream()
-                        .filter(empleado -> (empleado.getIdEmpleado() + "").contains(valor)
+                        .filter(empleado -> empleado.getCodigo().trim().toLowerCase().contains(valor)                              
                         || empleado.getCodigo().trim().toLowerCase().contains(valor)
                         || empleado.getTipoIdentificacion().trim().toLowerCase().contains(valor)
                         || empleado.getIdentificacion().trim().toLowerCase().contains(valor)
@@ -290,7 +290,8 @@ public class FrmListar extends javax.swing.JInternalFrame {
                         || empleado.getPuesto().trim().toLowerCase().contains(valor)
                         || empleado.getCorreo().trim().toLowerCase().contains(valor)
                         || empleado.getTelefono().trim().toLowerCase().contains(valor)
-                        || empleado.getDepartamento().trim().toLowerCase().contains(valor)                
+                        || empleado.getDepartamento().trim().toLowerCase().contains(valor)    
+                        || (empleado.getIdEmpleado() +"").trim().toLowerCase().contains(valor)
                         ).collect(Collectors.toList());
 
                 this.CargarTabla((ArrayList<clsEmpleado>) finales);
