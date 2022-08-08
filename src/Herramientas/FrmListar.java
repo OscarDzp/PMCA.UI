@@ -277,9 +277,6 @@ public class FrmListar extends javax.swing.JInternalFrame {
         }
     }
     
-    
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnLimpiarBuscador;

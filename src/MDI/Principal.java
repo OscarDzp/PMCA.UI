@@ -352,8 +352,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        //Mejora de estetica.
+    public static void main(String args[]) {     
         FlatDarculaLaf.setup();
         try {
             UIManager.setLookAndFeel(new FlatDarculaLaf());

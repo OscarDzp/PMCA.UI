@@ -93,12 +93,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         lbMotor.setText("Motor:");
 
-        txtMotor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMotorActionPerformed(evt);
-            }
-        });
-
         lbCilindrada.setText("Cilindrada:");
 
         txtAno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
@@ -130,12 +124,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbCantidadRequerida6.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida6.setText("*");
 
-        txtMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMarcaActionPerformed(evt);
-            }
-        });
-
         lbMarca1.setText("Modelo:");
 
         txtPasajeros.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
@@ -153,20 +141,8 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbCantidadRequerida4.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida4.setText("*");
 
-        txtModelo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtModeloActionPerformed(evt);
-            }
-        });
-
         lbCantidadRequerida1.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida1.setText("*");
-
-        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoActionPerformed(evt);
-            }
-        });
 
         lbCantidadRequerida.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida.setText("*");
@@ -215,36 +191,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         btGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btGuardarActionPerformed(evt);
-            }
-        });
-
-        txtEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEstadoActionPerformed(evt);
-            }
-        });
-
-        txtKilometraje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKilometrajeActionPerformed(evt);
-            }
-        });
-
-        txtCombustible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCombustibleActionPerformed(evt);
-            }
-        });
-
-        txtChasis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtChasisActionPerformed(evt);
-            }
-        });
-
-        txtTransmision.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTransmisionActionPerformed(evt);
             }
         });
 
@@ -467,22 +413,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMotorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMotorActionPerformed
-
-    private void txtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMarcaActionPerformed
-
-    private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModeloActionPerformed
-
-    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoActionPerformed
-
     private void btLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimpiarActionPerformed
         this.LimpiarFormulario();
     }//GEN-LAST:event_btLimpiarActionPerformed
@@ -593,26 +523,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btGuardarActionPerformed
-
-    private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEstadoActionPerformed
-
-    private void txtKilometrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKilometrajeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtKilometrajeActionPerformed
-
-    private void txtCombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCombustibleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCombustibleActionPerformed
-
-    private void txtChasisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtChasisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtChasisActionPerformed
-
-    private void txtTransmisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTransmisionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTransmisionActionPerformed
     private void LimpiarFormulario() {
         this.txtCodigo.setText("");
         this.txtMarca.setText("");

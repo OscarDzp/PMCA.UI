@@ -71,21 +71,10 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
 
         IbCodigo.setText("Código:");
 
-        txtCodigoEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoEmpleadoActionPerformed(evt);
-            }
-        });
-
         lbCódigoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido.setText("*");
 
         cbxTipoDeIdentificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el tipo de identificación", "Cédula física", "DIMEX", "DIDI" }));
-        cbxTipoDeIdentificacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxTipoDeIdentificacionActionPerformed(evt);
-            }
-        });
 
         lbTipoIdentificacion.setText("Tipo de identificación:");
 
@@ -255,13 +244,13 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
                                 .addComponent(txtNombre))
                             .addGroup(CorreoLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(CorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IbIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(CorreoLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(CorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(IbNombre)
-                            .addComponent(IbIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(IbNombre)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(CorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IbPrimerApellido)
@@ -327,10 +316,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_chkActivoActionPerformed
 
-    private void txtCodigoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoEmpleadoActionPerformed
-
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
         if (this.txtCodigoEmpleado.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
@@ -395,7 +380,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         }
 
         intzGestor myGestor = new clsGestor();
-
         boolean estado;
         if (this.chkActivo.isSelected()) {
             estado = true;
@@ -446,13 +430,7 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         this.chkActivo.setSelected(false);
         this.txtDireccion.setText("");
     }
-    private void cbxTipoDeIdentificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoDeIdentificacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxTipoDeIdentificacionActionPerformed
-
     
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Correo;
     private javax.swing.JLabel IbCodigo;

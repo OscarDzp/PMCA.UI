@@ -69,12 +69,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         lbCódigoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido.setText("*");
 
-        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoActionPerformed(evt);
-            }
-        });
-
         lbNombre.setText("Nombre:");
 
         lbNombreRequerido.setForeground(new java.awt.Color(153, 0, 0));
@@ -285,10 +279,6 @@ public class FrmRegistro extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoActionPerformed
-
     private void chkActivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkActivoActionPerformed
         if (this.chkInactivo.isSelected()) {
             this.chkInactivo.setSelected(false);
@@ -380,7 +370,6 @@ private void LimpiarFormulario(){
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btGuardarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btGuardar;

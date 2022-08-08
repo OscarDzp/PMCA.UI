@@ -323,9 +323,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtMotor">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMotorActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbCilindrada">
           <Properties>
@@ -414,9 +411,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtMarca">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMarcaActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbMarca1">
           <Properties>
@@ -465,9 +459,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtModelo">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtModeloActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbCantidadRequerida1">
           <Properties>
@@ -478,9 +469,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCodigo">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbCantidadRequerida">
           <Properties>
@@ -622,29 +610,14 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtEstado">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEstadoActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtKilometraje">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtKilometrajeActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCombustible">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCombustibleActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtChasis">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtChasisActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTransmision">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTransmisionActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

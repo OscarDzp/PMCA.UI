@@ -53,16 +53,6 @@ public class FrmListar extends javax.swing.JInternalFrame {
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-search-16.png"))); // NOI18N
         btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        btnBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnBuscarKeyPressed(evt);
-            }
-        });
 
         btnLimpiarBuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/clean-16.png"))); // NOI18N
         btnLimpiarBuscador.setText("Limpiar");
@@ -72,11 +62,6 @@ public class FrmListar extends javax.swing.JInternalFrame {
             }
         });
 
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
-            }
-        });
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyPressed(evt);
@@ -186,24 +171,11 @@ public class FrmListar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtBuscarKeyPressed
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
-
-    }//GEN-LAST:event_txtBuscarActionPerformed
-
     private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
         this.txtBuscar.setText("");
         this.txtBuscar.requestFocus();
         this.CargarTabla();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
-
-    private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
-
-    }//GEN-LAST:event_btnBuscarKeyPressed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        this.txtBuscar.requestFocus();
-        this.Buscar();
-    }//GEN-LAST:event_btnBuscarActionPerformed
     private void CargarTabla() {
         ArrayList<clsAutos> autos = this.myGestor.ListarAutos();
         String[] columnas = new String[]{
@@ -295,10 +267,8 @@ public class FrmListar extends javax.swing.JInternalFrame {
     
     private void Buscar() {
         String valor = this.txtBuscar.getText().trim().toLowerCase();
-        if (!valor.isEmpty() && !valor.isBlank()) {
-            
-            ArrayList<clsAutos> autos = this.myGestor.ListarAutos();
-            
+        if (!valor.isEmpty() && !valor.isBlank()) {            
+            ArrayList<clsAutos> autos = this.myGestor.ListarAutos();           
             if (autos != null && !autos.isEmpty()) {
                 List<clsAutos> finales = autos.stream()
                         .filter(auto -> auto.getCodigo().trim().toLowerCase().contains(valor)

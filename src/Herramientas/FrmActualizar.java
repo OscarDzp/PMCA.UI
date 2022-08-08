@@ -76,11 +76,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbInformacionFiltrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbInformacionFiltrar.setText("Ingrese el código de la herramienta.");
 
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
-            }
-        });
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyPressed(evt);
@@ -115,11 +110,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbCódigoRequerido.setText("*");
 
         txtCodigo.setEditable(false);
-        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoActionPerformed(evt);
-            }
-        });
 
         lbNombre.setText("Nombre:");
 
@@ -460,10 +450,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_chkActivoActionPerformed
 
-    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoActionPerformed
-
     private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
         this.txtBuscar.setText("");
         this.txtBuscar.requestFocus();
@@ -510,11 +496,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             this.Buscar();
         }
     }//GEN-LAST:event_txtBuscarKeyPressed
-
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
-
-    }//GEN-LAST:event_txtBuscarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btActualizar;
