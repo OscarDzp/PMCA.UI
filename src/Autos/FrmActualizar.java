@@ -1,6 +1,7 @@
 package Autos;
 
 import Clases.clsAutos;
+import Interfaces.intzGestor;
 import Seguridad.clsGestor;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
@@ -69,7 +70,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAnotaciones = new javax.swing.JTextArea();
         lbCantidadRequerida = new javax.swing.JLabel();
-        btActualizar = new javax.swing.JButton();
         lbCombustible = new javax.swing.JLabel();
         txtCombustible = new javax.swing.JFormattedTextField();
         lbCantidadRequerida7 = new javax.swing.JLabel();
@@ -86,6 +86,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbCódigoRequerido1 = new javax.swing.JLabel();
         btLimpiar = new javax.swing.JButton();
         lbCantidad5 = new javax.swing.JLabel();
+        btActualizar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -94,6 +95,11 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-search-16.png"))); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         btnLimpiarBuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/clean-16.png"))); // NOI18N
         btnLimpiarBuscador.setText("Limpiar");
@@ -178,15 +184,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbCantidadRequerida.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida.setText("*");
 
-        btActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/save-16.png"))); // NOI18N
-        btActualizar.setText("Actualizar");
-        btActualizar.setEnabled(false);
-        btActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btActualizarActionPerformed(evt);
-            }
-        });
-
         lbCombustible.setText("Combustible:");
 
         txtCombustible.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
@@ -231,6 +228,15 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         });
 
         lbCantidad5.setText("Estado:");
+
+        btActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/save-16.png"))); // NOI18N
+        btActualizar.setText("Actualizar");
+        btActualizar.setEnabled(false);
+        btActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btActualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jActualizarCarroLayout = new javax.swing.GroupLayout(jActualizarCarro);
         jActualizarCarro.setLayout(jActualizarCarroLayout);
@@ -473,6 +479,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         this.txtBuscar.requestFocus();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
     private void LimpiarFormulario() {
+        this.txtBuscar.setText("");
         this.txtCodigo.setText("");
         this.txtMarca.setText("");
         this.txtModelo.setText("");
@@ -495,8 +502,17 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_txtBuscarKeyPressed
 
+    private void btLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimpiarActionPerformed
+        this.LimpiarFormulario();
+    }//GEN-LAST:event_btLimpiarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+ this.txtBuscar.requestFocus();
+        this.Buscar();
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     private void btActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActualizarActionPerformed
-        if (this.txtCodigo.getText().trim().equals("")) {
+       if (this.txtCodigo.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.txtCodigo.requestFocus();
             return;
@@ -590,23 +606,19 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 this.txtKilometraje.getText().trim(),
                 this.txtEstado.getText().trim(),
                 Integer.parseInt(this.txtValor.getValue().toString()),
-                this.txtAnotaciones.getText().trim()            
+             this.txtAnotaciones.getText().trim()            
             );
-
         boolean operacion = myGestor.ActualizarAutos(myAutos);
-
+        
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.LimpiarFormulario();
             this.txtCodigo.requestFocus();
+            this.btActualizar.setEnabled(false);
         } else {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btActualizarActionPerformed
-
-    private void btLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimpiarActionPerformed
-        this.LimpiarFormulario();
-    }//GEN-LAST:event_btLimpiarActionPerformed
     private void Buscar() {
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
 
@@ -635,6 +647,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, "NO se ha encontrado el Vehiculo.", "Aviso", JOptionPane.WARNING_MESSAGE);
                 this.btActualizar.setEnabled(false);
                 this.txtBuscar.setText("");
+                 this.LimpiarFormulario();
             }
 
         }

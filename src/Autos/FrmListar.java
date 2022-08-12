@@ -14,7 +14,7 @@ import javax.swing.table.TableModel;
  * @author oscar
  */
 public class FrmListar extends javax.swing.JInternalFrame {
-    
+
     private clsGestor myGestor;
 
     /**
@@ -24,7 +24,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         this.myGestor = new clsGestor();
         initComponents();
         this.CargarTabla();
-        
+
     }
 
     /**
@@ -53,6 +53,11 @@ public class FrmListar extends javax.swing.JInternalFrame {
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/icons8-search-16.png"))); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         btnLimpiarBuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Iconos/clean-16.png"))); // NOI18N
         btnLimpiarBuscador.setText("Limpiar");
@@ -176,6 +181,11 @@ public class FrmListar extends javax.swing.JInternalFrame {
         this.txtBuscar.requestFocus();
         this.CargarTabla();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        this.txtBuscar.requestFocus();
+        this.Buscar();
+    }//GEN-LAST:event_btnBuscarActionPerformed
     private void CargarTabla() {
         ArrayList<clsAutos> autos = this.myGestor.ListarAutos();
         String[] columnas = new String[]{
@@ -219,7 +229,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
             this.tListarAutos.setModel(obModelo);
         }
     }
-    
+
     private void CargarTabla(ArrayList<clsAutos> autos) {
         String[] columnas = new String[]{
             "Id Auto",
@@ -239,9 +249,9 @@ public class FrmListar extends javax.swing.JInternalFrame {
             "Estado",
             "Anotaciones"
         };
-        
+
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
-        
+
         for (clsAutos auto : autos) {
             obModelo.addRow(new Object[]{
                 auto.getIdAutos() + "",
@@ -264,11 +274,11 @@ public class FrmListar extends javax.swing.JInternalFrame {
         }
         this.tListarAutos.setModel((TableModel) obModelo);
     }
-    
+
     private void Buscar() {
         String valor = this.txtBuscar.getText().trim().toLowerCase();
-        if (!valor.isEmpty() && !valor.isBlank()) {            
-            ArrayList<clsAutos> autos = this.myGestor.ListarAutos();           
+        if (!valor.isEmpty() && !valor.isBlank()) {
+            ArrayList<clsAutos> autos = this.myGestor.ListarAutos();
             if (autos != null && !autos.isEmpty()) {
                 List<clsAutos> finales = autos.stream()
                         .filter(auto -> auto.getCodigo().trim().toLowerCase().contains(valor)
