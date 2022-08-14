@@ -473,6 +473,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     }
 
     private void LimpiarFormulario() {
+        this.txtBuscar.setText("");
         this.txtCodigoEmpleado.setText("");
         this.cbxTipoDeIdentificacion.setSelectedIndex(0);
         this.txtIdentificacion.setText("");

@@ -1,4 +1,3 @@
-
 package Herramientas;
 
 import Clases.clsActivo;
@@ -8,22 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author oscar
  */
 public class FrmListar extends javax.swing.JInternalFrame {
-    
- private clsGestor myGestor;
- 
-      
+
+    private clsGestor myGestor;
+
     /**
      * Creates new form Frm
      */
     public FrmListar() {
-         this.myGestor = new clsGestor();
+        this.myGestor = new clsGestor();
         initComponents();
-          this.CargarTabla();
+        this.CargarTabla();
     }
 
     /**
@@ -185,19 +184,18 @@ public class FrmListar extends javax.swing.JInternalFrame {
         this.txtBuscar.requestFocus();
         this.CargarTabla();
     }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
- 
+
     private void CargarTabla() {
         ArrayList<clsActivo> activos = this.myGestor.ListarActivos();
         String[] columnas = new String[]{
             "Activo",
-            "Nombre",
             "Código",
+            "Nombre",
             "Tipo",
             "Fragilidad",
             "Descripción",
-            "Estado",
-            "Cantidad"
-        };
+            "Cantidad",
+            "Estado",};
 
         DefaultTableModel obModelo = new DefaultTableModel(columnas, 0);
         for (clsActivo activo : activos) {
@@ -214,14 +212,13 @@ public class FrmListar extends javax.swing.JInternalFrame {
             this.tActivos.setModel(obModelo);
         }
     }
-    
-    
+
     private void CargarTabla(ArrayList<clsActivo> activos) {
 
         String[] columnas = new String[]{
             "Activo",
-            "Nombre",
             "Código",
+            "Nombre",
             "Tipo",
             "Fragilidad",
             "Descripción",
@@ -244,8 +241,8 @@ public class FrmListar extends javax.swing.JInternalFrame {
         }
         this.tActivos.setModel(obModel);
     }
-    
-        private String ObtenerEstado(boolean estado) {
+
+    private String ObtenerEstado(boolean estado) {
         if (estado) {
             return "Activo";
         } else {
@@ -253,7 +250,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
         }
     }
 
-       private void Buscar() {
+    private void Buscar() {
 
         String valor = this.txtBuscar.getText().trim().toLowerCase();
 
@@ -276,7 +273,7 @@ public class FrmListar extends javax.swing.JInternalFrame {
             this.CargarTabla();
         }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnLimpiarBuscador;
