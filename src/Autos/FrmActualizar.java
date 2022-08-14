@@ -45,7 +45,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         txtPasajeros = new javax.swing.JFormattedTextField();
         lbCantidad2 = new javax.swing.JLabel();
         lbCantidad = new javax.swing.JLabel();
-        txtChasis = new javax.swing.JFormattedTextField();
         lbCódigoRequerido2 = new javax.swing.JLabel();
         lbCantidadRequerida8 = new javax.swing.JLabel();
         lbCantidadRequerida6 = new javax.swing.JLabel();
@@ -64,18 +63,14 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         lbTipo = new javax.swing.JLabel();
         lbCantidad1 = new javax.swing.JLabel();
         txtMarca = new javax.swing.JTextField();
-        txtKilometraje = new javax.swing.JFormattedTextField();
-        txtEstado = new javax.swing.JFormattedTextField();
         lbMotor = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAnotaciones = new javax.swing.JTextArea();
         lbCantidadRequerida = new javax.swing.JLabel();
         lbCombustible = new javax.swing.JLabel();
-        txtCombustible = new javax.swing.JFormattedTextField();
         lbCantidadRequerida7 = new javax.swing.JLabel();
         lbCantidadRequerida1 = new javax.swing.JLabel();
         lbCódigoRequerido = new javax.swing.JLabel();
-        txtTransmision = new javax.swing.JFormattedTextField();
         lbCódigoRequerido3 = new javax.swing.JLabel();
         txtAno = new javax.swing.JFormattedTextField();
         lbCódigo = new javax.swing.JLabel();
@@ -87,6 +82,11 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         btLimpiar = new javax.swing.JButton();
         lbCantidad5 = new javax.swing.JLabel();
         btActualizar = new javax.swing.JButton();
+        txtTransmision = new javax.swing.JTextField();
+        txtCombustible = new javax.swing.JTextField();
+        txtChasis = new javax.swing.JTextField();
+        txtKilometraje = new javax.swing.JTextField();
+        txtEstado = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -134,8 +134,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         lbCantidad.setText("Año:");
 
-        txtChasis.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
         lbCódigoRequerido2.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido2.setText("*");
 
@@ -171,10 +169,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         lbCantidad1.setText("Pasajeros:");
 
-        txtKilometraje.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
-        txtEstado.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
         lbMotor.setText("Motor:");
 
         txtAnotaciones.setColumns(20);
@@ -186,8 +180,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         lbCombustible.setText("Combustible:");
 
-        txtCombustible.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
         lbCantidadRequerida7.setForeground(new java.awt.Color(153, 0, 0));
         lbCantidadRequerida7.setText("*");
 
@@ -196,8 +188,6 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         lbCódigoRequerido.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido.setText("*");
-
-        txtTransmision.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         lbCódigoRequerido3.setForeground(new java.awt.Color(153, 0, 0));
         lbCódigoRequerido3.setText("*");
@@ -281,8 +271,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addComponent(txtValor)
-                                                    .addComponent(txtTransmision)
-                                                    .addComponent(txtPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(txtPasajeros, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                                                    .addComponent(txtTransmision)))
                                             .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jActualizarCarroLayout.createSequentialGroup()
                                                     .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +310,7 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(lbTipoRequerido)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(comboxTipoEstilo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(comboxTipoEstilo, 0, 247, Short.MAX_VALUE))
                                             .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addGroup(jActualizarCarroLayout.createSequentialGroup()
@@ -340,30 +330,29 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(lbCantidadRequerida4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(txtChasis)
+                                                .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(txtMotor)
                                                     .addComponent(txtCilidrada)
-                                                    .addComponent(txtCombustible, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jActualizarCarroLayout.createSequentialGroup()
+                                                    .addComponent(txtCombustible)
+                                                    .addComponent(txtChasis)))
+                                            .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jActualizarCarroLayout.createSequentialGroup()
+                                                    .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                                         .addComponent(lbCantidad4)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(lbCantidadRequerida6, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                                        .addComponent(lbCantidadRequerida6, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                                         .addComponent(lbCantidad5)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(lbCantidadRequerida7, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(37, 37, 37)))
-                                                .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(lbCantidadRequerida7, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(txtEstado)
-                                                    .addComponent(txtKilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                    .addComponent(txtKilometraje)))))
                                     .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                         .addGap(312, 312, 312)
                                         .addComponent(lbInformacionFiltrar)))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE))
                             .addGroup(jActualizarCarroLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btActualizar)
@@ -435,18 +424,18 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCantidad3)
                     .addComponent(lbCantidadRequerida5)
-                    .addComponent(txtTransmision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbCantidad4)
                     .addComponent(lbCantidadRequerida6)
+                    .addComponent(txtTransmision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtKilometraje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCantidad5)
                     .addComponent(lbCantidadRequerida7)
-                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbCantidad6)
                     .addComponent(lbCantidadRequerida8)
-                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jActualizarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbDescripción)
@@ -474,45 +463,8 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
-        this.txtBuscar.setText("");
-        this.txtBuscar.requestFocus();
-    }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
-    private void LimpiarFormulario() {
-        this.txtBuscar.setText("");
-        this.txtCodigo.setText("");
-        this.txtMarca.setText("");
-        this.txtModelo.setText("");
-        this.txtAno.setText("");
-        this.txtPasajeros.setText("");
-        this.txtTransmision.setText("");
-        this.txtValor.setText("");
-        this.txtMotor.setText("");
-        this.txtCilidrada.setText("");
-        this.txtCombustible.setText("");
-        this.txtChasis.setText("");
-        this.txtKilometraje.setText("");
-        this.txtEstado.setText("");
-        this.comboxTipoEstilo.setSelectedIndex(0);
-        this.txtAnotaciones.setText("");
-    }
-    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            this.Buscar();
-        }
-    }//GEN-LAST:event_txtBuscarKeyPressed
-
-    private void btLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimpiarActionPerformed
-        this.LimpiarFormulario();
-    }//GEN-LAST:event_btLimpiarActionPerformed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
- this.txtBuscar.requestFocus();
-        this.Buscar();
-    }//GEN-LAST:event_btnBuscarActionPerformed
-
     private void btActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActualizarActionPerformed
-       if (this.txtCodigo.getText().trim().equals("")) {
+        if (this.txtCodigo.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "El código es requerido.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.txtCodigo.requestFocus();
             return;
@@ -590,26 +542,26 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
 
         this.myGestor = new clsGestor();
 
-    clsAutos myAutos = new clsAutos(
-                this.idAuto,
-                this.txtCodigo.getText().trim(),
-                this.txtMarca.getText().trim(),
-                this.txtModelo.getText().trim(),
-                Integer.parseInt(this.txtAno.getText().trim()),
-                this.comboxTipoEstilo.getSelectedItem().toString(),
-                this.txtMotor.getText().trim(),
-                this.txtCilidrada.getText().trim(),
-                this.txtCombustible.getText().trim(),
-                Integer.parseInt(this.txtPasajeros.getValue().toString()),
-                this.txtChasis.getText().trim(),
-                this.txtTransmision.getText().trim(),
-                this.txtKilometraje.getText().trim(),
-                this.txtEstado.getText().trim(),
-                Integer.parseInt(this.txtValor.getValue().toString()),
-             this.txtAnotaciones.getText().trim()            
-            );
+        clsAutos myAutos = new clsAutos(
+            this.idAuto,
+            this.txtCodigo.getText().trim(),
+            this.txtMarca.getText().trim(),
+            this.txtModelo.getText().trim(),
+            Integer.parseInt(this.txtAno.getText().trim()),
+            this.comboxTipoEstilo.getSelectedItem().toString(),
+            this.txtMotor.getText().trim(),
+            this.txtCilidrada.getText().trim(),
+            this.txtCombustible.getText().trim(),
+            Integer.parseInt(this.txtPasajeros.getValue().toString()),
+            this.txtChasis.getText().trim(),
+            this.txtTransmision.getText().trim(),
+            this.txtKilometraje.getText().trim(),
+            this.txtEstado.getText().trim(),
+            Integer.parseInt(this.txtValor.getValue().toString()),
+            this.txtAnotaciones.getText().trim()
+        );
         boolean operacion = myGestor.ActualizarAutos(myAutos);
-        
+
         if (operacion) {
             JOptionPane.showMessageDialog(this, "Se guardo la información correctamente.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
             this.LimpiarFormulario();
@@ -619,7 +571,44 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "No se logro guardar la información correctamente, Intentar nuevamente.", "Aviso", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btActualizarActionPerformed
-    private void Buscar() {
+
+    private void btLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimpiarActionPerformed
+        this.LimpiarFormulario();
+    }//GEN-LAST:event_btLimpiarActionPerformed
+
+    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.Buscar();
+        }
+    }//GEN-LAST:event_txtBuscarKeyPressed
+
+    private void btnLimpiarBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarBuscadorActionPerformed
+        this.txtBuscar.setText("");
+        this.txtBuscar.requestFocus();
+    }//GEN-LAST:event_btnLimpiarBuscadorActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        this.txtBuscar.requestFocus();
+        this.Buscar();
+    }//GEN-LAST:event_btnBuscarActionPerformed
+    private void LimpiarFormulario() {
+        this.txtBuscar.setText("");
+        this.txtCodigo.setText("");
+        this.txtMarca.setText("");
+        this.txtModelo.setText("");
+        this.txtAno.setText("");
+        this.txtPasajeros.setText("");
+        this.txtTransmision.setText("");
+        this.txtValor.setText("");
+        this.txtMotor.setText("");
+        this.txtCilidrada.setText("");
+        this.txtCombustible.setText("");
+        this.txtChasis.setText("");
+        this.txtKilometraje.setText("");
+        this.txtEstado.setText("");
+        this.comboxTipoEstilo.setSelectedIndex(0);
+        this.txtAnotaciones.setText("");
+    }    private void Buscar() {
         String codigo = this.txtBuscar.getText().trim().toLowerCase();
 
         if (!codigo.isBlank() && !codigo.isEmpty()) {
@@ -696,17 +685,17 @@ public class FrmActualizar extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField txtAno;
     private javax.swing.JTextArea txtAnotaciones;
     private javax.swing.JTextField txtBuscar;
-    private javax.swing.JFormattedTextField txtChasis;
+    private javax.swing.JTextField txtChasis;
     private javax.swing.JFormattedTextField txtCilidrada;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JFormattedTextField txtCombustible;
-    private javax.swing.JFormattedTextField txtEstado;
-    private javax.swing.JFormattedTextField txtKilometraje;
+    private javax.swing.JTextField txtCombustible;
+    private javax.swing.JTextField txtEstado;
+    private javax.swing.JTextField txtKilometraje;
     private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtModelo;
     private javax.swing.JTextField txtMotor;
     private javax.swing.JFormattedTextField txtPasajeros;
-    private javax.swing.JFormattedTextField txtTransmision;
+    private javax.swing.JTextField txtTransmision;
     private javax.swing.JFormattedTextField txtValor;
     // End of variables declaration//GEN-END:variables
 

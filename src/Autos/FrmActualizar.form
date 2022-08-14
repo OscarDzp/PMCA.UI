@@ -88,8 +88,8 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                       <Component id="txtValor" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtPasajeros" alignment="0" pref="391" max="32767" attributes="0"/>
                                                       <Component id="txtTransmision" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="txtPasajeros" alignment="0" min="-2" pref="391" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="103" alignment="1" groupAlignment="1" attributes="0">
@@ -141,7 +141,7 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="lbTipoRequerido" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="comboxTipoEstilo" max="32767" attributes="0"/>
+                                                  <Component id="comboxTipoEstilo" pref="247" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -167,31 +167,30 @@
                                                       </Group>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="txtMotor" max="32767" attributes="0"/>
+                                                      <Component id="txtCilidrada" max="32767" attributes="0"/>
+                                                      <Component id="txtCombustible" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="txtChasis" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="txtMotor" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="txtCilidrada" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="txtCombustible" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Group type="102" alignment="1" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
                                                           <Component id="lbCantidad4" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="lbCantidadRequerida6" min="-2" pref="12" max="-2" attributes="0"/>
-                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                       </Group>
                                                       <Group type="102" alignment="0" attributes="0">
                                                           <Component id="lbCantidad5" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="lbCantidadRequerida7" min="-2" pref="12" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="txtEstado" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="txtKilometraje" alignment="0" min="-2" pref="262" max="-2" attributes="0"/>
+                                                      <Component id="txtKilometraje" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -201,7 +200,7 @@
                                           <Component id="lbInformacionFiltrar" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace pref="29" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -293,19 +292,19 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lbCantidad3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbCantidadRequerida5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtTransmision" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbCantidad4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbCantidadRequerida6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTransmision" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtKilometraje" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lbCantidad5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbCantidadRequerida7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbCantidad6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbCantidadRequerida8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtValor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -401,13 +400,6 @@
         <Component class="javax.swing.JLabel" name="lbCantidad">
           <Properties>
             <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JFormattedTextField" name="txtChasis">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#0" subtype="-1" type="0"/>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbC&#xf3;digoRequerido2">
@@ -532,20 +524,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtMarca">
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="txtKilometraje">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#0" subtype="-1" type="0"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JFormattedTextField" name="txtEstado">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#0" subtype="-1" type="0"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lbMotor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Motor:"/>
@@ -579,13 +557,6 @@
             <Property name="text" type="java.lang.String" value="Combustible:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="txtCombustible">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#0" subtype="-1" type="0"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lbCantidadRequerida7">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -608,13 +579,6 @@
               <Color blue="0" green="0" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="*"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JFormattedTextField" name="txtTransmision">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#0" subtype="-1" type="0"/>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbC&#xf3;digoRequerido3">
@@ -700,6 +664,16 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btActualizarActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtTransmision">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCombustible">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtChasis">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtKilometraje">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtEstado">
         </Component>
       </SubComponents>
     </Container>
